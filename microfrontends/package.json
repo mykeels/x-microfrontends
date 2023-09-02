@@ -2,9 +2,12 @@
   "name": "microfrontends",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "build": "tsup src/index.ts --sourcemap --dts --external react --external react-dom --external react-query",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,5 +16,10 @@
   "dependencies": {
     "classnames": "^2.3.2",
     "path-to-regexp": "^6.2.1"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3"
   }
 }
