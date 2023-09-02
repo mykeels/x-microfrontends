@@ -80,3 +80,5 @@ MicrofrontendSlot.defaultProps = {
   Fallback: () => <div>Sorry, there was an error loading this component</div>,
   Loading: () => <div>...loading...</div>,
 } satisfies Partial<MicrofrontendSlotProps>;
+
+export * from "./MicrofrontendSlot.utils";

@@ -141,3 +141,5 @@ export const Microfrontend = ({
     ></div>
   );
 };
+
+export * from "./Microfrontend.types";
