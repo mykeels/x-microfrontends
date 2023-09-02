@@ -2,67 +2,64 @@ import {
   assert,
   canMatchHost,
   canMatchPermissions,
-  canMatchRoute,
   selectProps,
 } from "../../common";
 import {
+  MicrofrontendCustomSlotOptions,
   MicrofrontendManifest,
   MicrofrontendPermission,
-  MicrofrontendRouteOptions,
 } from "../Microfrontend/Microfrontend.types";
 
-type MicrofrontendMatchingRoute = {
+type MicrofrontendMatchingName = {
+  module: string;
   entry: string;
   scope: string;
-  module: string;
-  route: string;
-  host?: string;
+  [key: string]: any;
 };
 
 /**
  *
  * @param manifests
- * @param url
+ * @param name
  * @param options
  * @param options.transformPermission Use this to replace keywords in permissions such as :companyAccountId or :userId
- * @returns slots matching the current location url
+ * @returns Slots matching the given name
  */
-export const getMicrofrontendsMatchingLocation = (
+export const getMicrofrontendsByName = (
   manifests: MicrofrontendManifest[],
-  url: string,
-  options: {
+  name: string,
+  options?: {
     host?: string;
     user?: { permissions: MicrofrontendPermission[] };
     transformPermission?: (
       permission: MicrofrontendPermission
     ) => MicrofrontendPermission;
   }
-): MicrofrontendMatchingRoute[] =>
+): MicrofrontendMatchingName[] =>
   manifests
     ?.reduce(
       (arr, manifest) =>
         [
           ...arr,
-          ...(manifest.slots.routes?.map((route) => ({
+          ...(manifest.slots[name]?.map((slot) => ({
             ...selectProps(["entry", "scope", "module", "auth"])(manifest),
-            ...(typeof route === "string" ? { route } : route),
+            ...(typeof slot === "string" ? { slot } : slot),
           })) || []),
-        ] as MicrofrontendMatchingRoute[],
-      [] as MicrofrontendMatchingRoute[]
+        ] as MicrofrontendMatchingName[],
+      [] as MicrofrontendMatchingName[]
+    )
+    .filter(({ host: routeHost }: MicrofrontendCustomSlotOptions) =>
+      canMatchHost(routeHost, options?.host)
     )
     .filter(
-      ({ route, host: routeHost }: MicrofrontendRouteOptions) =>
-        canMatchRoute(route, url) && canMatchHost(routeHost, options?.host)
-    )
-    .filter(
-      ({ auth }: MicrofrontendRouteOptions) =>
+      ({ auth }: MicrofrontendCustomSlotOptions) =>
         !auth?.required ||
         canMatchPermissions(
           assert(options?.user, "options.user must exist"),
-          auth?.permissions?.map(
+          auth?.permissions?.map((p) =>
             typeof options?.transformPermission === "function"
-              ? options?.transformPermission
-              : (p) => p
+              ? options?.transformPermission(p)
+              : p
           ) || []
         )
     );

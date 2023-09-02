@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { makeError } from "../../common";
 
 import { Microfrontend } from "../Microfrontend";
-import { getMicrofrontendSlotsMatchingLocation } from "./MicrofrontendScreen.utils";
+import { getMicrofrontendsMatchingLocation } from "./MicrofrontendScreen.utils";
 import {
   MicrofrontendManifest,
   MicrofrontendMountProps,
@@ -41,7 +41,7 @@ export const MicrofrontendScreen = ({
     error,
   } = useQuery("manifests", () => getMicrofrontendManifests());
   const [targetMF] =
-    getMicrofrontendSlotsMatchingLocation(manifests || [], url, {
+    getMicrofrontendsMatchingLocation(manifests || [], url, {
       host,
       user: props?.user,
     }) || [];
