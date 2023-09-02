@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "importHelpers": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "jsx": "react",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["dom", "esnext"],
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useUnknownInCatchVariables": true,
+    "removeComments": false,
+    "strictNullChecks": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "typeAcquisition": {
+    "enable": true
+  }
+}

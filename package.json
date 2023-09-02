@@ -4,12 +4,20 @@
   "description": "A demo of microfrontends using SPAs",
   "main": "index.js",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "mykeels",
   "license": "MIT",
   "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query": "^3.39.3",
+    "react-router-dom": "^6.15.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.21",
     "tsup": "^7.2.0",
     "tsx": "^3.12.8",
     "turbo": "^1.10.13",
