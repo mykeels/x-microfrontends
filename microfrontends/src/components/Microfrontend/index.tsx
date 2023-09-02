@@ -13,6 +13,7 @@ type MicrofrontendProps = {
   module: string;
   entry: string;
   manifests: MicrofrontendManifest[];
+  url?: string;
   id?: string;
   className?: string | string[] | { [key: string]: boolean };
   navigate?: (href: string) => any;

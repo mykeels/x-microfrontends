@@ -17,7 +17,7 @@ export type MicrofrontendManifest = {
   manifestId: string;
 };
 
-type MicrofrontendRouteOptions = {
+export type MicrofrontendRouteOptions = {
   route: string;
   module?: string;
   host?: string;
@@ -26,7 +26,7 @@ type MicrofrontendRouteOptions = {
 
 type MicrofrontendRoute = string | MicrofrontendRouteOptions;
 
-type MicrofrontendCustomSlotOptions = {
+export type MicrofrontendCustomSlotOptions = {
   title?: string;
   module: string;
   host?: string;
@@ -49,7 +49,7 @@ type MicrofrontendAuthOptions = {
   permissions?: MicrofrontendPermission[];
 };
 
-type MicrofrontendPermission = `${"read-only" | "manage"}:${string}`;
+export type MicrofrontendPermission = `${"read-only" | "manage"}:${string}`;
 
 type MicrofrontendAuth = MicrofrontendAuthOptions & { [key: string]: any };
 
@@ -60,6 +60,7 @@ export type MicrofrontendMountProps = {
   fetch: (input: RequestInfo, init?: RequestInit) => Promise<Response>;
   eventBus?: MicrofrontendEventBus;
   layout: MicrofrontendLayout;
+  user?: { permissions: MicrofrontendPermission[] };
   rpcClient?: (
     endpoint: string
   ) => <TMessage>(message: TMessage) => Promise<any>;
