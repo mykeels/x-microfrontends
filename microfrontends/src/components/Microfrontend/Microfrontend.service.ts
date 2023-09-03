@@ -26,13 +26,9 @@ export function loadComponent<TScope extends string>(
 
     const container = $window[scope];
     // Initialize the container, it may provide shared modules
-    try {
-      await container.init(__webpack_share_scopes__.default);
-    } catch (err) {
-      console.warn(err, { scope, module, container });
-    }
+    await container.init(__webpack_share_scopes__.default);
     const factory = await Promise.race([
-      $window[scope]?.get(module),
+      container?.get(module),
       sleep(300).then(() =>
         Promise.reject(
           new Error(
