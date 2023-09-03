@@ -26,20 +26,7 @@ export const Layout = () => {
             className="flex self-start h-12 w-12 mx-4"
           />
           <ul className="flex flex-col gap-4 list-none">
-            <MicrofrontendSlot className="inline" name="nav:item" />
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-purple-400">
-              <svg
-                className="home-icon"
-                viewBox="0 0 24 24"
-                width="24"
-                fill="white"
-              >
-                <path d="M12 1.696L.622 8.807l1.06 1.696L3 9.679V19.5C3 20.881 4.119 22 5.5 22h13c1.381 0 2.5-1.119 2.5-2.5V9.679l1.318.824 1.06-1.696L12 1.696zM12 16.5c-1.933 0-3.5-1.567-3.5-3.5s1.567-3.5 3.5-3.5 3.5 1.567 3.5 3.5-1.567 3.5-3.5 3.5z"></path>
-              </svg>
-              <h1>
-                <strong>Home</strong>
-              </h1>
-            </li>
+            <MicrofrontendSlot className="contents" name="nav:item" />
             <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-teal-300">
               <svg
                 className="search-icon"

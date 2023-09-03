@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "lib": ["esnext"]
+  },
+  "include": ["src"],
+  "extends": "../tsconfig.base.json"
+}

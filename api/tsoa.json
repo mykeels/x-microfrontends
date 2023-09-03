@@ -1,0 +1,13 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "ignore",
+  "controllerPathGlobs": ["src/**/*.ts"],
+  "spec": {
+    "outputDirectory": "dist",
+    "specVersion": 3
+  },
+  "routes": {
+    "routesDir": "src/tsoa",
+    "iocModule": "src/common/ioc"
+  }
+}
