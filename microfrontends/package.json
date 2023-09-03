@@ -8,6 +8,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "tsup src/index.ts --sourcemap --dts --external react --external react-dom --external react-router-dom --external react-query",
+    "watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,4 +1,3 @@
-import { MicrofrontendSlot } from "microfrontends";
 import "./Layout.css";
 
 import React from "react";
@@ -26,7 +25,6 @@ export const Layout = () => {
             className="flex self-start h-12 w-12 mx-4"
           />
           <ul className="flex flex-col gap-4 list-none">
-            <MicrofrontendSlot className="inline" name="nav:item" />
             <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-purple-400">
               <svg
                 className="home-icon"

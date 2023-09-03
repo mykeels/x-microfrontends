@@ -142,4 +142,8 @@ export const Microfrontend = ({
   );
 };
 
+Microfrontend.defaultProps = {
+  loadMicrofrontend,
+};
+
 export * from "./Microfrontend.types";

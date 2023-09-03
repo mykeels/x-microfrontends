@@ -13,7 +13,11 @@ function App() {
   return (
     <QueryClientProvider client={queryClientRef.current}>
       <ReactQueryDevtools />
-      <AppRouter getMicrofrontendManifests={async () => []} />
+      <AppRouter
+        getMicrofrontendManifests={async () =>
+          fetch("/manifests.json").then((res) => res.json())
+        }
+      />
     </QueryClientProvider>
   );
 }

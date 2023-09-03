@@ -1,0 +1,29 @@
+[
+  {
+    "scope": "timeline",
+    "module": "./index.js",
+    "entry": "http://localhost:4001/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [],
+      "nav:item": [
+        {
+          "name": "Home",
+          "module": "./nav-home"
+        }
+      ],
+      "nav:post": [
+        {
+          "name": "Post",
+          "module": "./nav-post"
+        }
+      ],
+      "main:content": [
+        {
+          "name": "Timeline",
+          "module": "./timeline"
+        }
+      ]
+    }
+  }
+]
