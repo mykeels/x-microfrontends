@@ -13,13 +13,21 @@ const WhoToFollow = () => (
     <h1>Who to follow</h1>
     <div className="container-follow flex">
       <img
-        src="https://i.pinimg.com/564x/c8/9a/95/c89a95b93677318157e3259a8e99e43b.jpg"
+        src="https://pbs.twimg.com/profile_images/1620106569236246529/uRZcbsLg_400x400.jpg"
         alt="photo"
       />
       <div>
-        <span>Ippo</span>
+        <span>Shubh Sharma ☕</span>
         <br />
-        <span className="user-handle">@makinouchiippo</span>
+        <span className="user-handle">
+          <a
+            href="https://twitter.com/shubhstwt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @shubhstwt
+          </a>
+        </span>
       </div>
       <button className="button"></button>
       <button className="button follow">Follow</button>

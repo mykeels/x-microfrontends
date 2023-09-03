@@ -13,23 +13,23 @@ const Waddup = () => (
     <h1>What’s happening</h1>
     <div className="container-explore">
       <span>Trending</span>
-      <h5>#LeaveTwitterElon</h5>
-      <span>6,166 posts</span>
+      <h5>#SysConf2023</h5>
+      <span>6,969 posts</span>
     </div>
     <div className="container-explore">
       <span>Technology</span>
-      <h5>Apple</h5>
-      <span>6,166 posts</span>
+      <h5>Microfrontends</h5>
+      <span>12,435 posts</span>
     </div>
     <div className="container-explore">
-      <span>Business & finance · Trending</span>
-      <h5>Gen Z</h5>
-      <span>6,166 posts</span>
+      <span>Management · Trending</span>
+      <h5>Scaling Dev Teams</h5>
+      <span>9,876 posts</span>
     </div>
     <div className="container-explore">
-      <span>Trending in India</span>
-      <h5>Bengaluru</h5>
-      <span>6,166 posts</span>
+      <span>Trending in Nigeria</span>
+      <h5>Say No to Bottlenecks</h5>
+      <span>234 posts</span>
     </div>
     <h6 className="showmore">Show more</h6>
   </div>
