@@ -4,6 +4,7 @@ import "./controllers";
 
 import { config } from "dotenv";
 import express, { json, urlencoded } from "express";
+import cors from "cors";
 
 import { RegisterRoutes } from "./tsoa/routes";
 
@@ -14,6 +15,11 @@ export function createExpressApp(): express.Express {
 
   app.use(json());
   app.use(urlencoded({ extended: true }));
+  app.use(
+    cors({
+      origin: ["http://localhost:4000", "http://localhost:4001"],
+    })
+  );
 
   RegisterRoutes(app);
 

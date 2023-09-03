@@ -5,7 +5,10 @@ import { ReactQueryDevtools } from "react-query/devtools";
 
 import { AppRouter } from "./components/index.ts";
 
-function App() {
+function App({
+  getManifestsUri = process.env.REACT_APP_API_ROOT_URL ||
+    "http://localhost:3333",
+} = {}) {
   const queryClientRef = React.useRef<QueryClient>();
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient();
@@ -15,7 +18,7 @@ function App() {
       <ReactQueryDevtools />
       <AppRouter
         getMicrofrontendManifests={async () =>
-          fetch("/manifests.json").then((res) => res.json())
+          fetch(getManifestsUri).then((res) => res.json())
         }
       />
     </QueryClientProvider>
