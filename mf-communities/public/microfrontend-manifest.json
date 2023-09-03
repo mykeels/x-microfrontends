@@ -1,0 +1,16 @@
+{
+  "scope": "communities",
+  "module": "./index.js",
+  "entry": "http://localhost:4005/remoteEntry.js",
+  "events": {},
+  "slots": {
+    "routes": [],
+    "nav:item": [
+      {
+        "name": "Communities",
+        "module": "./nav-communities",
+        "priority": 4
+      }
+    ]
+  }
+}
