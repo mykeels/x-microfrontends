@@ -8,7 +8,8 @@
     "nav:item": [
       {
         "name": "Home",
-        "module": "./nav-home"
+        "module": "./nav-home",
+        "priority": 0
       }
     ],
     "nav:post": [
