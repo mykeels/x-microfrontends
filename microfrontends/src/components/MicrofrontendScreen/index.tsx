@@ -13,11 +13,18 @@ import { MicrofrontendErrorFallback } from "../ErrorBoundary/ErrorBoundary.types
 
 type MicrofrontendScreenProps = {
   host?: string;
-  getMicrofrontendManifests: () => Promise<MicrofrontendManifest[]>;
   Loading: React.ComponentType;
   Fallback: MicrofrontendErrorFallback;
   Microfrontend: typeof Microfrontend;
-} & MicrofrontendMountProps;
+} & Omit<MicrofrontendMountProps, "manifests" | "ErrorBoundary"> &
+  (
+    | {
+        getMicrofrontendManifests: () => Promise<MicrofrontendManifest[]>;
+      }
+    | {
+        manifests: MicrofrontendManifest[];
+      }
+  );
 
 /**
  * Route-level component, that loads Microfrontends based on
@@ -25,7 +32,6 @@ type MicrofrontendScreenProps = {
  */
 export const MicrofrontendScreen = ({
   host,
-  getMicrofrontendManifests,
   Loading,
   Fallback,
   navigate,
@@ -39,7 +45,11 @@ export const MicrofrontendScreen = ({
     isLoading,
     isError,
     error,
-  } = useQuery("manifests", () => getMicrofrontendManifests());
+  } = useQuery("manifests", () =>
+    "getMicrofrontendManifests" in props
+      ? props.getMicrofrontendManifests()
+      : props.manifests
+  );
   const [targetMF] =
     getMicrofrontendsMatchingLocation(manifests || [], url, {
       host,

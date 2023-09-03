@@ -14,6 +14,7 @@
     "noUnusedParameters": true,
     "useUnknownInCatchVariables": true,
     "removeComments": false,
+    "resolveJsonModule": true,
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
     "strict": true,

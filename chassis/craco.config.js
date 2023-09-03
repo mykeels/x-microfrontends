@@ -1,6 +1,6 @@
 const overrideWebpackConfig = require("./config-overrides");
 
-module.exports = {
+const config = {
   reactScriptsVersion: "react-scripts" /* (default value) */,
   style: {
     css: {
@@ -22,5 +22,10 @@ module.exports = {
       return overrideWebpackConfig(webpackConfig, env);
     }
   },
-  plugins: []
-};
+  plugins: [],
+  typescript: {
+    enableTypeChecking: true
+  }
+}
+
+module.exports = config;

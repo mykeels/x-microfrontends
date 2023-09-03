@@ -3,46 +3,45 @@ const path = require("path");
 const ModuleFederationPlugin = require("webpack").container
   .ModuleFederationPlugin;
 
-const deps = require("./package.json").dependencies;
+const pkg = require("./package.json");
+const getVersion = (name) => pkg.dependencies[name] || pkg.peerDependencies[name];
 
 // eslint-disable-next-line
 module.exports = function override(config, env) {
   config.output.publicPath = "auto";
 
   config.target = "web";
-  const isMicrofrontendsEnabled =
-    process.env.REACT_APP_USE_MICROFRONTENDS === "true";
-  if (isMicrofrontendsEnabled) {
-    config.entry = ["./src/index.js"];
-    config.plugins.push(
-      new ModuleFederationPlugin({
-        name: "chassis",
-        filename: "remoteEntry.js",
-        exposes: {
-          "./index.js": "./src/bootstrap.js"
+  config.entry = ["./src/index.ts"];
+  config.plugins.push(
+    new ModuleFederationPlugin({
+      name: "chassis",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./index.js": "./src/bootstrap.tsx"
+      },
+      shared: {
+        react: {
+          requiredVersion: getVersion("react"),
+          import: "react",
+          shareKey: "react",
+          shareScope: "default",
+          singleton: true
         },
-        shared: {
-          react: {
-            requiredVersion: deps["react"],
-            import: "react",
-            shareKey: "react",
-            shareScope: "default",
-            singleton: true
-          },
-          "react-dom": {
-            requiredVersion: deps["react-dom"],
-            singleton: true
-          },
-          "react-query": {
-            requiredVersion: deps["react-query"],
-            singleton: true
-          }
+        "react-dom": {
+          requiredVersion: getVersion("react-dom"),
+          singleton: true
+        },
+        "react-router-dom": {
+          requiredVersion: getVersion("react-router-dom"),
+          singleton: true
+        },
+        "react-query": {
+          requiredVersion: getVersion("react-query"),
+          singleton: true
         }
-      })
-    );
-  } else {
-    config.entry = ["./src/bootstrap.js"];
-  }
+      }
+    })
+  );
 
   config.resolve = {
     fallback: {

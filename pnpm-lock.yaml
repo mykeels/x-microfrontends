@@ -44,6 +44,12 @@ importers:
       '@craco/craco':
         specifier: ^7.1.0
         version: 7.1.0(@types/node@20.5.8)(postcss@8.4.29)(react-scripts@5.0.1)(typescript@5.2.2)
+      eventemitter3:
+        specifier: ^5.0.1
+        version: 5.0.1
+      microfrontends:
+        specifier: '*'
+        version: link:../microfrontends
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -59,6 +65,13 @@ importers:
       react-scripts:
         specifier: ^5.0.1
         version: 5.0.1(@babel/plugin-syntax-flow@7.22.5)(@babel/plugin-transform-react-jsx@7.22.5)(esbuild@0.18.20)(eslint@8.48.0)(react@18.2.0)(typescript@5.2.2)
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+    devDependencies:
+      '@types/react-dom':
+        specifier: ^18.2.7
+        version: 18.2.7
 
   microfrontends:
     dependencies:
@@ -2738,6 +2751,12 @@ packages:
     resolution: {integrity: sha512-EEhsLsD6UsDM1yFhAvy0Cjr6VwmpMWqFBCb9w07wVugF7w9nfajxLuVmngTIpgS6svCnm6Vaw+MZhoDCKnOfsw==}
     dev: false
 
+  /@types/react-dom@18.2.7:
+    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
+    dependencies:
+      '@types/react': 18.2.21
+    dev: true
+
   /@types/react@18.2.21:
     resolution: {integrity: sha512-neFKG/sBAwGxHgXiIxnbm3/AAVQ/cMRS93hvBpg8xYRbeQSPVABp9U2bRnPf0iI4+Ucdv3plSxKK+3CW2ENJxA==}
     dependencies:
@@ -5188,6 +5207,10 @@ packages:
 
   /eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
+    dev: false
+
+  /eventemitter3@5.0.1:
+    resolution: {integrity: sha512-GWkBvjiSZK87ELrYOSESUYeVIc9mvLLf/nXalMOS5dYrgZq9o5OVkbZAVM06CVxYsCwH9BDZFPlQTlPA1j4ahA==}
     dev: false
 
   /events@3.3.0:

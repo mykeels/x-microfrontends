@@ -115,17 +115,22 @@ const getMicrofrontendController = (
   const $window = getWindow();
   $window.$mfs = $window.$mfs || {};
   $window.$mfs[scope] = $window.$mfs[scope] || {};
-  $window.$mfs[scope][module] = $window.$mfs[scope][module] || {
-    mount: () => {
-      console.warn(`No ${scope} mount fn exists`);
-      return () => {};
-    },
-    unmount: () => console.warn(`No ${scope} unmount fn exists`),
-    instances: 0,
-    scope,
-    module,
-  };
-  return $window.$mfs[scope][module];
+  const $scope = $window.$mfs[scope];
+  if ($scope) {
+    $scope[module] = $scope[module] || {
+      mount: () => {
+        console.warn(`No ${scope} mount fn exists`);
+        return () => {};
+      },
+      unmount: () => console.warn(`No ${scope} unmount fn exists`),
+      instances: 0,
+      scope,
+      module,
+    };
+    return $scope?.[module]!;
+  }
+  console.warn(`No ${scope} scope exists in window.$mfs`);
+  return $scope?.[module]!;
 };
 
 /**
