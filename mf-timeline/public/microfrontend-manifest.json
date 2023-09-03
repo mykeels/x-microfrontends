@@ -21,7 +21,7 @@
     "main:content": [
       {
         "name": "Timeline",
-        "module": "./timeline"
+        "module": "./index"
       }
     ]
   }
