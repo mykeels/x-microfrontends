@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useId } from "react";
 import { ErrorBoundary } from "../ErrorBoundary";
 import { MicrofrontendContext } from "../../contexts";
 import { Microfrontend } from "../Microfrontend";
@@ -11,7 +11,6 @@ type MicrofrontendSlot = MicrofrontendCustomSlotOptions & {
 
 type MicrofrontendSlotProps = {
   name: string;
-  id?: string;
   transform?: (slots: MicrofrontendSlot[]) => MicrofrontendSlot[];
   Fallback?: React.ComponentType<{ slot?: MicrofrontendSlot }>;
   Loading?: React.ComponentType<{ slot?: MicrofrontendSlot }>;
@@ -19,7 +18,6 @@ type MicrofrontendSlotProps = {
 };
 
 export const MicrofrontendSlot = ({
-  id,
   name,
   transform,
   Fallback,
@@ -27,6 +25,7 @@ export const MicrofrontendSlot = ({
   className,
   ...props
 }: MicrofrontendSlotProps) => {
+  const id = useId();
   const { manifests, user, ...contextProps } = useContext(MicrofrontendContext);
 
   const slots = getMicrofrontendsByName(manifests, name, {
