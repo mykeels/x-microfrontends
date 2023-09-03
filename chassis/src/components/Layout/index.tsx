@@ -17,15 +17,15 @@ export const Layout = () => {
         </svg>
       </div>
 
-      <main className="flex flex-row px-32 gap-8">
+      <main className="flex flex-row px-32 py-2 gap-8">
         <nav className="flex flex-col self-start justify-between h-[90dvh] sticky top-0 px-4">
           <img
             src="https://seeklogo.com/images/T/twitter-x-logo-101C7D2420-seeklogo.com.png?v=638258077300000000"
             alt="logo"
             className="flex self-start h-12 w-12 mx-4"
           />
-          <ul className="flex flex-col list-none outline outline-purple-400">
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
+          <ul className="flex flex-col gap-4 list-none">
+            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-purple-400">
               <svg
                 className="home-icon"
                 viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ export const Layout = () => {
                 <strong>Home</strong>
               </h1>
             </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
+            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-teal-300">
               <svg
                 className="search-icon"
                 viewBox="0 0 24 24"
@@ -47,20 +47,9 @@ export const Layout = () => {
               >
                 <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z"></path>
               </svg>
-              <h1>Search</h1>
+              <h1>Explore</h1>
             </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
-              <svg
-                className="community-icon"
-                viewBox="0 0 24 24"
-                width="24"
-                fill="white"
-              >
-                <path d="M7.501 19.917L7.471 21H.472l.029-1.027c.184-6.618 3.736-8.977 7-8.977.963 0 1.95.212 2.87.672-.444.478-.851 1.03-1.212 1.656-.507-.204-1.054-.329-1.658-.329-2.767 0-4.57 2.223-4.938 6.004H7.56c-.023.302-.05.599-.059.917zm15.998.056L23.528 21H9.472l.029-1.027c.184-6.618 3.736-8.977 7-8.977s6.816 2.358 7 8.977zM21.437 19c-.367-3.781-2.17-6.004-4.938-6.004s-4.57 2.223-4.938 6.004h9.875zm-4.938-9c-.799 0-1.527-.279-2.116-.73-.836-.64-1.384-1.638-1.384-2.77 0-1.93 1.567-3.5 3.5-3.5s3.5 1.57 3.5 3.5c0 1.132-.548 2.13-1.384 2.77-.589.451-1.317.73-2.116.73zm-1.5-3.5c0 .827.673 1.5 1.5 1.5s1.5-.673 1.5-1.5-.673-1.5-1.5-1.5-1.5.673-1.5 1.5zM7.5 3C9.433 3 11 4.57 11 6.5S9.433 10 7.5 10 4 8.43 4 6.5 5.567 3 7.5 3zm0 2C6.673 5 6 5.673 6 6.5S6.673 8 7.5 8 9 7.327 9 6.5 8.327 5 7.5 5z"></path>
-              </svg>
-              <h1>Communities</h1>
-            </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
+            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-yellow-200">
               <svg
                 className="noti-icon"
                 viewBox="0 0 24 24"
@@ -71,7 +60,7 @@ export const Layout = () => {
               </svg>
               <h1>Notifications</h1>
             </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
+            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-red-400">
               <svg
                 className="msg-icon"
                 viewBox="0 0 24 24"
@@ -82,18 +71,18 @@ export const Layout = () => {
               </svg>
               <h1>Messages</h1>
             </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
+            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-orange-500">
               <svg
-                className="list-icon"
+                className="community-icon"
                 viewBox="0 0 24 24"
                 width="24"
                 fill="white"
               >
-                <path d="M3 4.5C3 3.12 4.12 2 5.5 2h13C19.88 2 21 3.12 21 4.5v15c0 1.38-1.12 2.5-2.5 2.5h-13C4.12 22 3 20.88 3 19.5v-15zM5.5 4c-.28 0-.5.22-.5.5v15c0 .28.22.5.5.5h13c.28 0 .5-.22.5-.5v-15c0-.28-.22-.5-.5-.5h-13zM16 10H8V8h8v2zm-8 2h8v2H8v-2z"></path>
+                <path d="M7.501 19.917L7.471 21H.472l.029-1.027c.184-6.618 3.736-8.977 7-8.977.963 0 1.95.212 2.87.672-.444.478-.851 1.03-1.212 1.656-.507-.204-1.054-.329-1.658-.329-2.767 0-4.57 2.223-4.938 6.004H7.56c-.023.302-.05.599-.059.917zm15.998.056L23.528 21H9.472l.029-1.027c.184-6.618 3.736-8.977 7-8.977s6.816 2.358 7 8.977zM21.437 19c-.367-3.781-2.17-6.004-4.938-6.004s-4.57 2.223-4.938 6.004h9.875zm-4.938-9c-.799 0-1.527-.279-2.116-.73-.836-.64-1.384-1.638-1.384-2.77 0-1.93 1.567-3.5 3.5-3.5s3.5 1.57 3.5 3.5c0 1.132-.548 2.13-1.384 2.77-.589.451-1.317.73-2.116.73zm-1.5-3.5c0 .827.673 1.5 1.5 1.5s1.5-.673 1.5-1.5-.673-1.5-1.5-1.5-1.5.673-1.5 1.5zM7.5 3C9.433 3 11 4.57 11 6.5S9.433 10 7.5 10 4 8.43 4 6.5 5.567 3 7.5 3zm0 2C6.673 5 6 5.673 6 6.5S6.673 8 7.5 8 9 7.327 9 6.5 8.327 5 7.5 5z"></path>
               </svg>
-              <h1>Lists</h1>
+              <h1>Communities</h1>
             </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
+            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4 outline outline-cyan-400">
               <svg
                 className="verify-icon"
                 viewBox="0 0 24 24"
@@ -104,28 +93,6 @@ export const Layout = () => {
               </svg>
               <h1>Verified</h1>
             </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
-              <svg
-                className="profile-icon"
-                viewBox="0 0 24 24"
-                width="24"
-                fill="white"
-              >
-                <path d="M5.651 19h12.698c-.337-1.8-1.023-3.21-1.945-4.19C15.318 13.65 13.838 13 12 13s-3.317.65-4.404 1.81c-.922.98-1.608 2.39-1.945 4.19zm.486-5.56C7.627 11.85 9.648 11 12 11s4.373.85 5.863 2.44c1.477 1.58 2.366 3.8 2.632 6.46l.11 1.1H3.395l.11-1.1c.266-2.66 1.155-4.88 2.632-6.46zM12 4c-1.105 0-2 .9-2 2s.895 2 2 2 2-.9 2-2-.895-2-2-2zM8 6c0-2.21 1.791-4 4-4s4 1.79 4 4-1.791 4-4 4-4-1.79-4-4z"></path>
-              </svg>
-              <h1>Profile</h1>
-            </li>
-            <li className="flex flex-row self-start py-2 px-4 rounded-full tabs-item gap-4">
-              <svg
-                className="more-icon"
-                viewBox="0 0 24 24"
-                width="24"
-                fill="white"
-              >
-                <path d="M3.75 12c0-4.56 3.69-8.25 8.25-8.25s8.25 3.69 8.25 8.25-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12zM12 1.75C6.34 1.75 1.75 6.34 1.75 12S6.34 22.25 12 22.25 22.25 17.66 22.25 12 17.66 1.75 12 1.75zm-4.75 11.5c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25S6 11.31 6 12s.56 1.25 1.25 1.25zm9.5 0c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25-1.25.56-1.25 1.25.56 1.25 1.25 1.25zM13.25 12c0 .69-.56 1.25-1.25 1.25s-1.25-.56-1.25-1.25.56-1.25 1.25-1.25 1.25.56 1.25 1.25z"></path>
-              </svg>
-              <h1>More</h1>
-            </li>
           </ul>
           <div className=" outline outline-purple-400">
             <button className="flex justify-around items-center bg-[#1d9bf0] text-white leftbutton text-xl py-2 px-4 mx-4 rounded-full w-[80%]">
@@ -133,7 +100,7 @@ export const Layout = () => {
             </button>
           </div>
         </nav>
-        <section className="flex flex-col feed grow">
+        <section className="flex flex-col feed grow outline outline-purple-400">
           <div className="logo-container">
             <img
               src="https://pbs.twimg.com/profile_images/1620106569236246529/uRZcbsLg_400x400.jpg"
@@ -901,10 +868,10 @@ export const Layout = () => {
             <h3>Load more</h3>
           </div>
         </section>
-        <aside className="flex flex-col self-start right sticky top-[-450px]">
+        <aside className="flex flex-col self-start right sticky top-[-224px]">
           <div className="container-right">
             <div className="search-wrapper">
-              <div className="flex flex-row gap-2 container-search px-4">
+              <div className="flex flex-row gap-2 container-search px-4 outline outline-teal-300">
                 <svg
                   className="flex search-bar-icon self-center relative bottom-2"
                   viewBox="0 -8 24 20"
@@ -916,12 +883,12 @@ export const Layout = () => {
                 </svg>
                 <input
                   type="text"
-                  className="flex search-bar self-start"
+                  className="flex search-bar self-start grow"
                   placeholder="Search"
                 />
               </div>
             </div>
-            <div className="Premium card">
+            <div className="Premium card outline outline-cyan-400">
               <h1>Subscribe to Premium</h1>
               <p>
                 Subscribe to unlock new features and if eligible, receive a
@@ -929,7 +896,7 @@ export const Layout = () => {
               </p>
               <button className="subscribe button">Subscribe</button>
             </div>
-            <div className="card explore">
+            <div className="card explore outline outline-green-300">
               <h1>What’s happening</h1>
               <div className="container-explore">
                 <span>Trending</span>
@@ -953,7 +920,7 @@ export const Layout = () => {
               </div>
               <h6 className="showmore">Show more</h6>
             </div>
-            <div className="card">
+            <div className="card outline outline-yellow-200">
               <h1>Who to follow</h1>
               <div className="container-follow flex">
                 <img

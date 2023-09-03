@@ -378,10 +378,6 @@ h3 {
     cursor: pointer;
   }
 
-  .Premium {
-    margin-top: 4rem;
-  }
-
   .card {
     padding: 0.8rem 1rem;
     background-color: rgb(22, 22, 22);
@@ -416,7 +412,7 @@ h3 {
   }
 
   .container-explore {
-    padding: 1rem 1.4rem;
+    padding: 0.8rem 1.4rem;
   }
 
   .container-explore h5 {
