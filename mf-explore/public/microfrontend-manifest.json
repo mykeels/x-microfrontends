@@ -1,0 +1,16 @@
+{
+  "scope": "explore",
+  "module": "./index.js",
+  "entry": "http://localhost:4002/remoteEntry.js",
+  "events": {},
+  "slots": {
+    "routes": [],
+    "nav:item": [
+      {
+        "name": "Explore",
+        "module": "./nav-explore",
+        "priority": 1
+      }
+    ]
+  }
+}
