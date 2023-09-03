@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { MicrofrontendRoutes } from "./components";
+import { MicrofrontendRoutes } from "./components/index.ts";
 
 function App() {
   const queryClientRef = React.useRef<QueryClient>();

@@ -1,1 +1,1 @@
-export * from "./MicrofrontendRoutes";
+export * from "./MicrofrontendRoutes.tsx";
