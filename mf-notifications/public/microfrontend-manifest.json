@@ -11,6 +11,13 @@
         "module": "./nav-notifications",
         "priority": 2
       }
+    ],
+    "aside:item": [
+      {
+        "name": "Who to follow",
+        "module": "./aside-follow-suggestions",
+        "priority": 3
+      }
     ]
   }
 }

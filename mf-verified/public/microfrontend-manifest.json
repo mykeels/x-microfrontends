@@ -11,6 +11,13 @@
         "module": "./nav-verified",
         "priority": 5
       }
+    ],
+    "aside:item": [
+      {
+        "name": "Subscribe",
+        "module": "./aside-subscribe",
+        "priority": 1
+      }
     ]
   }
 }

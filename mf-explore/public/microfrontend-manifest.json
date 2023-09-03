@@ -11,6 +11,18 @@
         "module": "./nav-explore",
         "priority": 1
       }
+    ],
+    "aside:item": [
+      {
+        "name": "Search",
+        "module": "./aside-search",
+        "priority": 0
+      },
+      {
+        "name": "What's happening",
+        "module": "./aside-waddup",
+        "priority": 2
+      }
     ]
   }
 }

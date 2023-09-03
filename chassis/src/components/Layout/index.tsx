@@ -3,6 +3,11 @@ import "./Layout.css";
 
 import React from "react";
 
+const sortByPriority = (slots: MicrofrontendSlot[]) =>
+  slots.sort((a, b) => {
+    return (a.priority || 0) - (b.priority || 0);
+  });
+
 export const Layout = () => {
   return (
     <>
@@ -29,11 +34,7 @@ export const Layout = () => {
             <MicrofrontendSlot
               className="contents"
               name="nav:item"
-              transform={(slots) =>
-                slots.sort((a, b) => {
-                  return (a.priority || 0) - (b.priority || 0);
-                })
-              }
+              transform={sortByPriority}
             />
           </ul>
           <MicrofrontendSlot className="contents" name="nav:footer" />
@@ -41,111 +42,11 @@ export const Layout = () => {
         <MicrofrontendSlot className="contents" name="main:content" />
         <aside className="flex flex-col self-start right sticky top-[-224px] w-1/4">
           <div className="container-right">
-            <div className="search-wrapper">
-              <div className="flex flex-row gap-2 container-search px-4 outline outline-teal-300">
-                <svg
-                  className="flex search-bar-icon self-center relative bottom-2"
-                  viewBox="0 -8 24 20"
-                  width="16"
-                  height="24"
-                  fill="gray"
-                >
-                  <path d="M10.25 3.75c-3.59 0-6.5 2.91-6.5 6.5s2.91 6.5 6.5 6.5c1.795 0 3.419-.726 4.596-1.904 1.178-1.177 1.904-2.801 1.904-4.596 0-3.59-2.91-6.5-6.5-6.5zm-8.5 6.5c0-4.694 3.806-8.5 8.5-8.5s8.5 3.806 8.5 8.5c0 1.986-.682 3.815-1.824 5.262l4.781 4.781-1.414 1.414-4.781-4.781c-1.447 1.142-3.276 1.824-5.262 1.824-4.694 0-8.5-3.806-8.5-8.5z"></path>
-                </svg>
-                <input
-                  type="text"
-                  className="flex search-bar self-start grow"
-                  placeholder="Search"
-                />
-              </div>
-            </div>
-            <div className="Premium card outline outline-cyan-400">
-              <h1>Subscribe to Premium</h1>
-              <p>
-                Subscribe to unlock new features and if eligible, receive a
-                share of ads revenue.
-              </p>
-              <button className="subscribe button">Subscribe</button>
-            </div>
-            <div className="card explore outline outline-green-300">
-              <h1>What’s happening</h1>
-              <div className="container-explore">
-                <span>Trending</span>
-                <h5>#LeaveTwitterElon</h5>
-                <span>6,166 posts</span>
-              </div>
-              <div className="container-explore">
-                <span>Technology</span>
-                <h5>Apple</h5>
-                <span>6,166 posts</span>
-              </div>
-              <div className="container-explore">
-                <span>Business & finance · Trending</span>
-                <h5>Gen Z</h5>
-                <span>6,166 posts</span>
-              </div>
-              <div className="container-explore">
-                <span>Trending in India</span>
-                <h5>Bengaluru</h5>
-                <span>6,166 posts</span>
-              </div>
-              <h6 className="showmore">Show more</h6>
-            </div>
-            <div className="card outline outline-yellow-200">
-              <h1>Who to follow</h1>
-              <div className="container-follow flex">
-                <img
-                  src="https://i.pinimg.com/564x/c8/9a/95/c89a95b93677318157e3259a8e99e43b.jpg"
-                  alt="photo"
-                />
-                <div>
-                  <span>Ippo</span>
-                  <br />
-                  <span className="user-handle">@makinouchiippo</span>
-                </div>
-                <button className="button"></button>
-                <button className="button follow">Follow</button>
-              </div>
-              <div className="container-follow flex">
-                <img
-                  src="https://i.pinimg.com/736x/ec/e2/b0/ece2b0f541d47e4078aef33ffd22777e.jpg"
-                  alt="photo"
-                />
-                <div>
-                  <span>Shivsagar_Dev</span>
-                  <br />
-                  <span className="user-handle">@CheezzyPizzZa</span>
-                </div>
-                <button className="button"></button>
-                <button className="button follow">Follow</button>
-              </div>
-              <div className="container-follow flex">
-                <img
-                  src="https://i.pinimg.com/736x/ec/e2/b0/ece2b0f541d47e4078aef33ffd22777e.jpg"
-                  alt="photo"
-                />
-                <div>
-                  <span>Dev_John_141</span>
-                  <br />
-                  <span className="user-handle">@devdev1412</span>
-                </div>
-                <button className="button"></button>
-                <button className="button follow">Follow</button>
-              </div>
-              <div className="container-follow flex">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSFot_CjQA9mkZtz3y4861VHLIme95sw_M0A"
-                  alt="photo"
-                />
-                <div>
-                  <span>PickleRick</span>
-                  <br />
-                  <span className="user-handle">@itsmepicklerick</span>
-                </div>
-                <button className="button"></button>
-                <button className="button follow">Follow</button>
-              </div>
-            </div>
+            <MicrofrontendSlot
+              className="contents"
+              name="aside:item"
+              transform={sortByPriority}
+            />
             <div className="container-terms-of-service">
               <span>Terms of service</span>
               <span>Privacy Policy</span>
