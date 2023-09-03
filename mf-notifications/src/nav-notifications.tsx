@@ -17,7 +17,7 @@ const Button = () => (
   </li>
 );
 
-export default register(pkg.name, "./nav-home", {
+export default register(pkg.name, "./nav-notifications", {
   mount: (containerRef) => {
     const root = createRoot(getHTMLElement(containerRef)!);
     root.render(

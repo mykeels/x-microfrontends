@@ -1,0 +1,16 @@
+{
+  "scope": "messages",
+  "module": "./index.js",
+  "entry": "http://localhost:4004/remoteEntry.js",
+  "events": {},
+  "slots": {
+    "routes": [],
+    "nav:item": [
+      {
+        "name": "Messages",
+        "module": "./nav-messages",
+        "priority": 1
+      }
+    ]
+  }
+}
