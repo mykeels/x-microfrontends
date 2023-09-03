@@ -12,7 +12,7 @@
         "priority": 0
       }
     ],
-    "nav:post": [
+    "nav:footer": [
       {
         "name": "Post",
         "module": "./nav-post"

@@ -8,7 +8,13 @@ import pkg from "../package.json";
 const getHTMLElement = (ref: HTMLElement | string) =>
   ref instanceof HTMLElement ? ref : document.getElementById(ref);
 
-const Button = () => <div>Post</div>;
+const Button = () => (
+  <div className="outline outline-purple-400">
+    <button className="flex justify-around items-center bg-[#1d9bf0] text-white leftbutton text-xl py-2 px-4 mx-4 rounded-full w-[80%]">
+      Post
+    </button>
+  </div>
+);
 
 export default register(pkg.name, "./nav-post", {
   mount: (containerRef) => {

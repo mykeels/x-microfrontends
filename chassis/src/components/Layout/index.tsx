@@ -36,11 +36,7 @@ export const Layout = () => {
               }
             />
           </ul>
-          <div className=" outline outline-purple-400">
-            <button className="flex justify-around items-center bg-[#1d9bf0] text-white leftbutton text-xl py-2 px-4 mx-4 rounded-full w-[80%]">
-              Post
-            </button>
-          </div>
+          <MicrofrontendSlot name="nav:footer" />
         </nav>
         <section className="flex flex-col feed grow outline outline-purple-400">
           <div className="logo-container">
