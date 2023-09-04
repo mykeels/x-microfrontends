@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/static/js/main.c9f289e2.js",
+    "timeline.js": "/remoteEntry.js",
+    "static/js/src_timeline_tsx.df12dddb.chunk.js": "/static/js/src_timeline_tsx.df12dddb.chunk.js",
+    "static/js/src_nav-post_tsx.b9138a5c.chunk.js": "/static/js/src_nav-post_tsx.b9138a5c.chunk.js",
+    "static/js/src_nav-home_tsx.2fd7f075.chunk.js": "/static/js/src_nav-home_tsx.2fd7f075.chunk.js",
+    "static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.657931f1.chunk.js": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.657931f1.chunk.js",
+    "static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.cab25d6a.chunk.js": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.cab25d6a.chunk.js",
+    "static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.20517118.chunk.js": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.20517118.chunk.js",
+    "static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.2d17015e.chunk.js": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.2d17015e.chunk.js",
+    "static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.6018a899.chunk.js": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.6018a899.chunk.js",
+    "static/js/microfrontends_dist_index_js-package_json.aabd0d57.chunk.js": "/static/js/microfrontends_dist_index_js-package_json.aabd0d57.chunk.js",
+    "index.html": "/index.html",
+    "main.c9f289e2.js.map": "/static/js/main.c9f289e2.js.map",
+    "remoteEntry.js.map": "/remoteEntry.js.map",
+    "src_timeline_tsx.df12dddb.chunk.js.map": "/static/js/src_timeline_tsx.df12dddb.chunk.js.map",
+    "src_nav-post_tsx.b9138a5c.chunk.js.map": "/static/js/src_nav-post_tsx.b9138a5c.chunk.js.map",
+    "src_nav-home_tsx.2fd7f075.chunk.js.map": "/static/js/src_nav-home_tsx.2fd7f075.chunk.js.map",
+    "node_modules_pnpm_react_18_2_0_node_modules_react_index_js.657931f1.chunk.js.map": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.657931f1.chunk.js.map",
+    "vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.cab25d6a.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.cab25d6a.chunk.js.map",
+    "vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.20517118.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.20517118.chunk.js.map",
+    "vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.2d17015e.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.2d17015e.chunk.js.map",
+    "vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.6018a899.chunk.js.map": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.6018a899.chunk.js.map",
+    "microfrontends_dist_index_js-package_json.aabd0d57.chunk.js.map": "/static/js/microfrontends_dist_index_js-package_json.aabd0d57.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c9f289e2.js"
+  ]
+}

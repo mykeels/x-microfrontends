@@ -1,0 +1,136 @@
+[
+  {
+    "scope": "communities",
+    "module": "./index.js",
+    "entry": "/mfs/communities/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [],
+      "nav:item": [
+        {
+          "name": "Communities",
+          "module": "./nav-communities",
+          "priority": 4
+        }
+      ]
+    }
+  },
+  {
+    "scope": "explore",
+    "module": "./index.js",
+    "entry": "/mfs/explore/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [],
+      "nav:item": [
+        {
+          "name": "Explore",
+          "module": "./nav-explore",
+          "priority": 1
+        }
+      ],
+      "aside:item": [
+        {
+          "name": "Search",
+          "module": "./aside-search",
+          "priority": 0
+        },
+        {
+          "name": "What's happening",
+          "module": "./aside-waddup",
+          "priority": 2
+        }
+      ]
+    }
+  },
+  {
+    "scope": "messages",
+    "module": "./index.js",
+    "entry": "/mfs/messages/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [],
+      "nav:item": [
+        {
+          "name": "Messages",
+          "module": "./nav-messages",
+          "priority": 3
+        }
+      ]
+    }
+  },
+  {
+    "scope": "notifications",
+    "module": "./index.js",
+    "entry": "/mfs/notifications/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [],
+      "nav:item": [
+        {
+          "name": "Notifications",
+          "module": "./nav-notifications",
+          "priority": 2
+        }
+      ],
+      "aside:item": [
+        {
+          "name": "Who to follow",
+          "module": "./aside-follow-suggestions",
+          "priority": 3
+        }
+      ]
+    }
+  },
+  {
+    "scope": "timeline",
+    "module": "./index.js",
+    "entry": "/mfs/timeline/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [],
+      "nav:item": [
+        {
+          "name": "Home",
+          "module": "./nav-home",
+          "priority": 0
+        }
+      ],
+      "nav:footer": [
+        {
+          "name": "Post",
+          "module": "./nav-post"
+        }
+      ],
+      "main:content": [
+        {
+          "name": "Timeline",
+          "module": "./index"
+        }
+      ]
+    }
+  },
+  {
+    "scope": "verified",
+    "module": "./index.js",
+    "entry": "/mfs/verified/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [],
+      "nav:item": [
+        {
+          "name": "Verified",
+          "module": "./nav-verified",
+          "priority": 5
+        }
+      ],
+      "aside:item": [
+        {
+          "name": "Subscribe",
+          "module": "./aside-subscribe",
+          "priority": 1
+        }
+      ]
+    }
+  }
+]

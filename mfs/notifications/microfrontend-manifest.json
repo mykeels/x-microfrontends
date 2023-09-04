@@ -1,0 +1,23 @@
+{
+  "scope": "notifications",
+  "module": "./index.js",
+  "entry": "http://localhost:4003/remoteEntry.js",
+  "events": {},
+  "slots": {
+    "routes": [],
+    "nav:item": [
+      {
+        "name": "Notifications",
+        "module": "./nav-notifications",
+        "priority": 2
+      }
+    ],
+    "aside:item": [
+      {
+        "name": "Who to follow",
+        "module": "./aside-follow-suggestions",
+        "priority": 3
+      }
+    ]
+  }
+}

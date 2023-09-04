@@ -1,0 +1,23 @@
+{
+  "scope": "verified",
+  "module": "./index.js",
+  "entry": "http://localhost:4006/remoteEntry.js",
+  "events": {},
+  "slots": {
+    "routes": [],
+    "nav:item": [
+      {
+        "name": "Verified",
+        "module": "./nav-verified",
+        "priority": 5
+      }
+    ],
+    "aside:item": [
+      {
+        "name": "Subscribe",
+        "module": "./aside-subscribe",
+        "priority": 1
+      }
+    ]
+  }
+}

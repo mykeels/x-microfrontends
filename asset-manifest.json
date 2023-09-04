@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.js": "/static/js/main.37c89a52.js",
+    "chassis.js": "/remoteEntry.js",
+    "static/css/src_bootstrap_tsx.b293fc2b.chunk.css": "/static/css/src_bootstrap_tsx.b293fc2b.chunk.css",
+    "static/js/src_bootstrap_tsx.3b9f31d6.chunk.js": "/static/js/src_bootstrap_tsx.3b9f31d6.chunk.js",
+    "static/js/node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js": "/static/js/node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js",
+    "static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js",
+    "static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js",
+    "static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.e670fd7a.chunk.js": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.e670fd7a.chunk.js",
+    "static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.b335b1ba.chunk.js": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.b335b1ba.chunk.js",
+    "static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js",
+    "index.html": "/index.html",
+    "main.37c89a52.js.map": "/static/js/main.37c89a52.js.map",
+    "remoteEntry.js.map": "/remoteEntry.js.map",
+    "src_bootstrap_tsx.b293fc2b.chunk.css.map": "/static/css/src_bootstrap_tsx.b293fc2b.chunk.css.map",
+    "src_bootstrap_tsx.3b9f31d6.chunk.js.map": "/static/js/src_bootstrap_tsx.3b9f31d6.chunk.js.map",
+    "node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js.map": "/static/js/node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js.map",
+    "node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js.map": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js.map",
+    "vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js.map",
+    "vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.e670fd7a.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.e670fd7a.chunk.js.map",
+    "vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.b335b1ba.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.b335b1ba.chunk.js.map",
+    "vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js.map": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.37c89a52.js"
+  ]
+}
