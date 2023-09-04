@@ -37,3 +37,9 @@ jobs:
         working-directory: ${{env.working-directory}}
       - run: ls -ah chassis/build
         working-directory: ${{env.working-directory}}
+      - run: |
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          npx gh-pages -d chassis/build -u "github-actions-bot <support+actions@github.com>"
+        env:
+          GITHUB_TOKEN: ${{ secrets.OUR_GITHUB_TOKEN }}
+        working-directory: ${{env.working-directory}}
