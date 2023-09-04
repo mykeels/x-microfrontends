@@ -1,4 +1,4 @@
-# @mykeels/microfrontends
+# microfrontends
 
 A library of utilities for powering Microfrontends.
 
@@ -7,7 +7,7 @@ A library of utilities for powering Microfrontends.
 You need the [Microfrontend](./src/components/Microfrontend/index.ts) component to do this.
 
 ```jsx
-import { Microfrontend } from "@mykeels/microfrontends";
+import { Microfrontend } from "microfrontends";
 
 <Microfrontend
   entry="http://localhost:3002/remoteEntry.js"
@@ -21,8 +21,8 @@ import { Microfrontend } from "@mykeels/microfrontends";
 ## To load Microfrontends on Routes in a Chassis
 
 ```jsx
-import { MicrofrontendScreen } from "@mykeels/microfrontends";
-import { useNavigate } from "react-router-dom";
+import { MicrofrontendScreen } from "microfrontends";
+import { useNavigate, Switch, Route } from "react-router-dom";
 
 import HomeScreen from "./components/HomeScreen";
 import { getMicrofrontendManifests } from "./services/microfrontends.service";
