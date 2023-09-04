@@ -194,9 +194,9 @@ A good example of this is the [aside-search app](./mf-explore/src/aside-search.t
 
 ### 3. Demonstrate route-level slots
 
-To enhance the above, the [explore app](./mf-explore/config-overrides.js#L20-L22) could
+To enhance the above, the aside-search app could
 
-- expose a route-level slot that targets `/explore`, that the chassis can navigate to, - passing the `query` as a route search param..
+- navigate to to `/explore?query=Blah`, - passing the `query` as a route search param..
 
 ### 4. Clean up this README
 
