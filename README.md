@@ -13,6 +13,7 @@ See [Demo](https://mykeels.github.io/x-microfrontends).
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
 - [License](#license)
+- [Credits](#credits)
 
 ## Overview
 
@@ -56,3 +57,7 @@ Feel free to open issues, or create pull requests.
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 Happy microfrontending, and enjoy [exploring this X clone built with microfrontends](https://mykeels.github.io/x-microfrontends)!
+
+## Credits
+
+The original html+css code used for this demo is by [@shubhstwt on X](https://twitter.com/shubhstwt/status/1692968496010015203). Without his work on the open source [xclone](https://github.com/shubhsharma19/xclone), it would be much harder to put this demo together than it currently is.
