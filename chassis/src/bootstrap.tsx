@@ -9,7 +9,7 @@ const queryClient = new QueryClient();
 
 function App({
   getManifestsUri = process.env.NODE_ENV === "production"
-    ? "/microfrontend-manifests.json"
+    ? `${process.env.PUBLIC_URL || ""}/microfrontend-manifests.json`
     : process.env.REACT_APP_API_ROOT_URL || "http://localhost:3333",
 } = {}) {
   return (
