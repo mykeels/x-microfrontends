@@ -19,7 +19,6 @@ module.exports = function override(config, env) {
       exposes: {
         "./nav-verified": "./src/nav-verified.tsx",
         "./aside-subscribe": "./src/aside-subscribe.tsx",
-        "./layout": "./src/layout.tsx",
         "./main": "./src/main.tsx",
       },
       shared: {

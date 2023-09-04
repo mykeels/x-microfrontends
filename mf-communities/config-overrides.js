@@ -18,7 +18,6 @@ module.exports = function override(config, env) {
       filename: "remoteEntry.js",
       exposes: {
         "./nav-communities": "./src/nav-communities.tsx",
-        "./layout": "./src/layout.tsx",
         "./main": "./src/main.tsx",
       },
       shared: {
