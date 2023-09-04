@@ -36,7 +36,14 @@ const Button = () => {
 
 export default register(pkg.name, "./nav-explore", {
   mount: (containerRef, props) => {
-    const root = createRoot(getHTMLElement(containerRef)!);
+    const container = getHTMLElement(containerRef);
+    if (container?.getAttribute("data-mf-mounted") === "true") {
+      return () => {
+        ReactDOM.unmountComponentAtNode(container!);
+      };
+    }
+    container?.setAttribute("data-mf-mounted", "true");
+    const root = createRoot(container!);
     root.render(
       <React.StrictMode>
         <MicrofrontendContext.Provider value={props as any}>

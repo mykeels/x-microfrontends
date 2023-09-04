@@ -51,7 +51,14 @@ const Waddup = () => {
 
 export default register(pkg.name, "./aside-waddup", {
   mount: (containerRef, props) => {
-    const root = createRoot(getHTMLElement(containerRef)!);
+    const container = getHTMLElement(containerRef);
+    if (container?.getAttribute("data-mf-mounted") === "true") {
+      return () => {
+        ReactDOM.unmountComponentAtNode(container!);
+      };
+    }
+    container?.setAttribute("data-mf-mounted", "true");
+    const root = createRoot(container!);
     root.render(
       <React.StrictMode>
         <MicrofrontendContext.Provider value={props as any}>
