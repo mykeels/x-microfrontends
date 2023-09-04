@@ -6,10 +6,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "npm run generate:routes",
+    "build": "tsup src/index.ts --dts",
+    "dev": "npm run prebuild && tsx watch src/index.ts",
     "generate:routes": "tsoa spec-and-routes",
     "watch:routes": "watch \"npm run generate:routes\" src/domains",
-    "dev": "npm run prebuild && tsx watch src/index.ts",
-    "build": "tsup src/index.ts --dts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

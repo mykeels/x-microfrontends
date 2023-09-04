@@ -27,6 +27,8 @@ jobs:
           run_install: true
           run_build: false
           working_directory: ${{env.working-directory}}
+      - run: pnpm config set enable-pre-post-scripts true
+        working-directory: ${{env.working-directory}}
       - run: pnpm run -r build
         working-directory: ${{env.working-directory}}
       - run: pnpm run -r copy:build
