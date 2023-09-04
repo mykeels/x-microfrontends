@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.6bee471d.js",
+    "main.js": "/static/js/main.63d2eebd.js",
     "messages.js": "/remoteEntry.js",
-    "static/js/src_nav-messages_tsx.2bc21319.chunk.js": "/static/js/src_nav-messages_tsx.2bc21319.chunk.js",
+    "static/js/src_nav-messages_tsx.d2479047.chunk.js": "/static/js/src_nav-messages_tsx.d2479047.chunk.js",
     "static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.cbb74a85.chunk.js": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.cbb74a85.chunk.js",
     "static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js",
     "static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.c932d54b.chunk.js": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.c932d54b.chunk.js",
     "static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.976901e8.chunk.js": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.976901e8.chunk.js",
     "static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.af97606d.chunk.js": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.af97606d.chunk.js",
     "index.html": "/index.html",
-    "main.6bee471d.js.map": "/static/js/main.6bee471d.js.map",
+    "main.63d2eebd.js.map": "/static/js/main.63d2eebd.js.map",
     "remoteEntry.js.map": "/remoteEntry.js.map",
-    "src_nav-messages_tsx.2bc21319.chunk.js.map": "/static/js/src_nav-messages_tsx.2bc21319.chunk.js.map",
+    "src_nav-messages_tsx.d2479047.chunk.js.map": "/static/js/src_nav-messages_tsx.d2479047.chunk.js.map",
     "node_modules_pnpm_react_18_2_0_node_modules_react_index_js.cbb74a85.chunk.js.map": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.cbb74a85.chunk.js.map",
     "vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js.map",
     "vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.c932d54b.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.c932d54b.chunk.js.map",
@@ -19,6 +19,6 @@
     "vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.af97606d.chunk.js.map": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.af97606d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.6bee471d.js"
+    "static/js/main.63d2eebd.js"
   ]
 }

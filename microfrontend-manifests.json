@@ -21,7 +21,12 @@
     "entry": "/mfs/explore/remoteEntry.js",
     "events": {},
     "slots": {
-      "routes": [],
+      "routes": [
+        {
+          "route": "/explore/*",
+          "module": "./aside-waddup"
+        }
+      ],
       "nav:item": [
         {
           "name": "Explore",
