@@ -2,7 +2,7 @@
   {
     "scope": "communities",
     "module": "./unused-root-module.js",
-    "entry": "/mfs/communities/remoteEntry.js",
+    "entry": "/x-microfrontends/mfs/communities/remoteEntry.js",
     "events": {},
     "slots": {
       "routes": [],
@@ -25,7 +25,7 @@
   {
     "scope": "explore",
     "module": "./unused-root-module.js",
-    "entry": "/mfs/explore/remoteEntry.js",
+    "entry": "/x-microfrontends/mfs/explore/remoteEntry.js",
     "events": {},
     "slots": {
       "routes": [],
@@ -60,7 +60,7 @@
   {
     "scope": "messages",
     "module": "./unused-root-module.js",
-    "entry": "/mfs/messages/remoteEntry.js",
+    "entry": "/x-microfrontends/mfs/messages/remoteEntry.js",
     "events": {},
     "slots": {
       "routes": [],
@@ -83,7 +83,7 @@
   {
     "scope": "notifications",
     "module": "./unused-root-module.js",
-    "entry": "/mfs/notifications/remoteEntry.js",
+    "entry": "/x-microfrontends/mfs/notifications/remoteEntry.js",
     "events": {},
     "slots": {
       "routes": [],
@@ -113,7 +113,7 @@
   {
     "scope": "timeline",
     "module": "./unused-root-module.js",
-    "entry": "/mfs/timeline/remoteEntry.js",
+    "entry": "/x-microfrontends/mfs/timeline/remoteEntry.js",
     "events": {},
     "slots": {
       "routes": [],
@@ -142,7 +142,7 @@
   {
     "scope": "verified",
     "module": "./unused-root-module.js",
-    "entry": "/mfs/verified/remoteEntry.js",
+    "entry": "/x-microfrontends/mfs/verified/remoteEntry.js",
     "events": {},
     "slots": {
       "routes": [],
