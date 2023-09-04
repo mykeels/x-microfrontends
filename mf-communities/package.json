@@ -6,6 +6,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "craco build",
+    "copy:build": "cpx \"build/**/*\" ../chassis/build/mfs/communities",
     "start": "craco start",
     "test": "craco test"
   },

@@ -13,7 +13,7 @@ const config = {
   webpack: {
     configure: (webpackConfig, { env }) => {
       if (process.env.WEBPACK_NODE_ENV !== "production") {
-        webpackConfig.optimization.minimize = false;
+        webpackConfig.optimization.minimize = true;
         webpackConfig.optimization.mergeDuplicateChunks = true;
         webpackConfig.optimization.chunkIds = "named";
         webpackConfig.optimization.flagIncludedChunks = true;
