@@ -58,26 +58,6 @@
     }
   },
   {
-    "scope": "layout",
-    "module": "./unused-root-module.js",
-    "entry": "/mfs/layout/remoteEntry.js",
-    "events": {},
-    "slots": {
-      "routes": [
-        {
-          "route": "/*",
-          "module": "./layout"
-        }
-      ],
-      "layout": [
-        {
-          "name": "Layout",
-          "module": "./layout"
-        }
-      ]
-    }
-  },
-  {
     "scope": "messages",
     "module": "./unused-root-module.js",
     "entry": "/mfs/messages/remoteEntry.js",

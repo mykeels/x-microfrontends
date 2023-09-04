@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.js": "/static/js/main.97bdaeab.js",
+    "main.js": "/static/js/main.cdfb66f4.js",
     "messages.js": "/remoteEntry.js",
     "static/js/src_nav-messages_tsx.8816c67d.chunk.js": "/static/js/src_nav-messages_tsx.8816c67d.chunk.js",
-    "static/js/src_layout_tsx.af0994bd.chunk.js": "/static/js/src_layout_tsx.af0994bd.chunk.js",
     "static/js/src_main_tsx.c25bbafc.chunk.js": "/static/js/src_main_tsx.c25bbafc.chunk.js",
     "static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.56db5d12.chunk.js": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.56db5d12.chunk.js",
     "static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js",
@@ -12,10 +11,9 @@
     "static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.af97606d.chunk.js": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.af97606d.chunk.js",
     "static/js/microfrontends_dist_index_js-package_json.de98518c.chunk.js": "/static/js/microfrontends_dist_index_js-package_json.de98518c.chunk.js",
     "index.html": "/index.html",
-    "main.97bdaeab.js.map": "/static/js/main.97bdaeab.js.map",
+    "main.cdfb66f4.js.map": "/static/js/main.cdfb66f4.js.map",
     "remoteEntry.js.map": "/remoteEntry.js.map",
     "src_nav-messages_tsx.8816c67d.chunk.js.map": "/static/js/src_nav-messages_tsx.8816c67d.chunk.js.map",
-    "src_layout_tsx.af0994bd.chunk.js.map": "/static/js/src_layout_tsx.af0994bd.chunk.js.map",
     "src_main_tsx.c25bbafc.chunk.js.map": "/static/js/src_main_tsx.c25bbafc.chunk.js.map",
     "node_modules_pnpm_react_18_2_0_node_modules_react_index_js.56db5d12.chunk.js.map": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.56db5d12.chunk.js.map",
     "vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.233da862.chunk.js.map",
@@ -25,6 +23,6 @@
     "microfrontends_dist_index_js-package_json.de98518c.chunk.js.map": "/static/js/microfrontends_dist_index_js-package_json.de98518c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.97bdaeab.js"
+    "static/js/main.cdfb66f4.js"
   ]
 }
