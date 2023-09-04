@@ -267,7 +267,7 @@ function App() {
             <p>
               We are excited to announce the maiden version of SysConf (a
               conference by{" "}
-              <a className="text-blue-300" href="">
+              <a className="text-blue-300" href="https://twitter.com/sysdsgn">
                 @sysdsgn
               </a>{" "}
               ), which will happen online on Sat, September 16th, 2023. <br />
