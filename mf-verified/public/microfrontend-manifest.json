@@ -1,6 +1,6 @@
 {
   "scope": "verified",
-  "module": "./index.js",
+  "module": "./unused-root-module.js",
   "entry": "http://localhost:4006/remoteEntry.js",
   "events": {},
   "slots": {

@@ -1,6 +1,6 @@
 {
   "scope": "messages",
-  "module": "./index.js",
+  "module": "./unused-root-module.js",
   "entry": "http://localhost:4004/remoteEntry.js",
   "events": {},
   "slots": {
