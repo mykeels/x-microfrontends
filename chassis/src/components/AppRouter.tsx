@@ -7,9 +7,10 @@ import {
   MicrofrontendManifest,
   MicrofrontendScreen,
   ErrorBoundary,
+  MicrofrontendSlot,
 } from "microfrontends";
 
-import { Layout } from "./Layout/index.tsx";
+import "./Layout/Layout.css";
 import pkg from "../../package.json";
 import { useQuery } from "react-query";
 
@@ -45,7 +46,7 @@ const AppRoutes = ({ manifests }: { manifests: MicrofrontendManifest[] }) => {
       }}
     >
       <Routes>
-        <Route path="/" element={<Layout />} />
+        <Route path="/" element={<MicrofrontendSlot name="layout" />} />
         <Route
           path="*"
           element={
