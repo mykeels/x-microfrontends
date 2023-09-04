@@ -51,37 +51,37 @@ This starts the 7 Frontend projects described above in different ports, along wi
 
 Each project uses [Webpack's Module Federation](https://webpack.js.org/concepts/module-federation/) to expose files.
 
-See [example in mf-timeline](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/config-overrides.js#L16-L45), where we
+See [example in mf-timeline](./mf-timeline/config-overrides.js#L16-L45), where we
 
-- expose [3 files](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/config-overrides.js#L19-L23),
-- ensure there is [a remoteEntry.js file](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/config-overrides.js#L18) which tells webpack how to find these files.
-- and [give them all a unique name identifier](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/config-overrides.js#L17), which we get from the package.json.
+- expose [3 apps](./mf-timeline/config-overrides.js#L19-L23),
+- ensure there is [a remoteEntry.js file](./mf-timeline/config-overrides.js#L18) which tells webpack how to find these files.
+- and [give them all a unique name identifier](./mf-timeline/config-overrides.js#L17), which we get from the package.json.
 
-The above actions form 3 concepts called `module`, `entry`, and `scope` respectively.
-
-We can see that a microfrontend can expose one or more `module` entries, under the same `scope`, with an `entry` that tells webpack how to find them. These concepts are helpful for understanding what comes next.
+The above actions form 3 concepts called `module`, `entry`, and `scope` respectively, where a microfrontend can expose one or more `module` apps, under the same `scope`, with an `entry` that tells webpack how to find them. These concepts are helpful for understanding what comes next.
 
 ### Dynamic Remote Resolution
 
-This project uses [Webpack Module Federation's promise-based dynamic remotes](https://webpack.js.org/concepts/module-federation/#promise-based-dynamic-remotes), where instead of having to manually specify each remote in the chassis project, we can resolve the values for their `scope`, `module` and `entry` at runtime.
+This project uses Webpack Module Federation's [Promise-based Dynamic Remotes](https://webpack.js.org/concepts/module-federation/#promise-based-dynamic-remotes), where instead of having to manually specify each remote in the chassis project, we can resolve the values for their `scope`, `module` and `entry` at runtime.
 
 When running locally, these values are obtained from the microfrontend manifests served by the [api project](./api/README.md) at http://localhost:3333.
 
 ### What are microfrontend manifests?
 
-To aid in dynamic remote resolution, each microfrontend publishes a `microfrontend-manifest.json`` file that contains information about how to load itself.
+To aid in dynamic remote resolution, each microfrontend publishes a `microfrontend-manifest.json` file that contains information about how to load itself.
 
-See [example in mf-timeline](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/public/microfrontend-manifest.json#L1-L28), where we have a
+See [example in mf-timeline](./mf-timeline/public/microfrontend-manifest.json#L2-L5), where we have a
 
 - scope: `timeline`
 - module: `./unused-root-module.js`
 - entry: `http://localhost:4001/remoteEntry.js`
 
-Notice that the `module: ./unused-root-module.js` is incorrect compared to the [3 exposed files](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/config-overrides.js#L19-L23) in its webpack module federation config. This is because the manifest can have one root module, and multiple [slots](#what-are-slots) module, so it helps to reserve the root module for route slots.
+Notice that the `module: ./unused-root-module.js` is incorrect compared to the [3 exposed apps](./mf-timeline/config-overrides.js#L19-L23) in its webpack module federation config. This is because the manifest can have one root module, and multiple [slots](#what-are-slots) module, so it helps to reserve the root module for route slots.
 
 #### What are Slots?
 
-[Slots](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/public/microfrontend-manifest.json#L6-L27) are how we are able to express that we have exposed more than one file in our module federation config. Each slot represents an exposed interface, that
+[Slots](./mf-timeline/public/microfrontend-manifest.json#L6-L27) are how we are able to express within our `microfrontend-manifest.json` file, that we have exposed more than one app in our module federation config.
+
+Each slot represents an exposed interface, that:
 
 - inherits its `scope` and `entry` from the root manifest,
 - may inherit its `module` from the root manifest,
@@ -92,7 +92,7 @@ Slots can be rendered either:
 - directly on the route with [MicrofrontendScreen](./microfrontends/src/components/MicrofrontendScreen/README.md), making them a route-level slot.
   - To specify routes, you would use the `slots.routes` property of the microfrontend-manifest.json file, which works:
     - just the same as other slots,
-    - and lets you add a `"route": "/explore/*"` property, specifying its route.
+    - except it requires a `"route": "/explore/*"` property, specifying its route.
   - You can get away with having one route slot that resides in the root, especially if your exposed app includes its own BrowserRouter and handles its own navigation, relying on the `navigate` [mount prop](#what-are-mount-props) when it needs to navigate to a route controlled by its parent.
   - Or you can choose to expose an app per route.
     - just the same as other slots,
@@ -120,11 +120,11 @@ export default {
 };
 ```
 
-such as [in mf-timeline](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/src/timeline.tsx#L818-L840).
+such as [in mf-timeline](./mf-timeline/src/timeline.tsx#L818-L840).
 
 #### What are mount props?
 
-the [mount function's props parameter](https://github.com/mykeels/x-microfrontends/blob/master/microfrontends/src/components/Microfrontend/Microfrontend.types.ts#L56-L65) contain data and functions we pass down to every microfrontend.
+the [mount function's props parameter](./microfrontends/src/components/Microfrontend/Microfrontend.types.ts#L56-L65) contain data and functions we pass down to every microfrontend.
 
 Having such a simple interface instead of exporting say a React component directly is a powerful concept because it lets us abstract away the moving parts of different frameworks. Technically, this can be used to load Angular, Vue, Solid, HTMX, etc, because all we need is a way to mount HTML with behaviours to an element, and unmount it when done.
 
@@ -132,7 +132,7 @@ Having such a simple interface instead of exporting say a React component direct
 
 One of the properties of the microfrontend-manifest.json I did not talk about is the `events`, which may expose a mapping of event names to a [JSON schema](https://json-schema.org/) object that describes its data.
 
-Using the Microfrontend Context, we can [pass an eventBus](https://github.com/mykeels/x-microfrontends/blob/master/chassis/src/components/AppRouter.tsx#L77) to our microfrontends, which they can use to communicate across the various apps.
+Using the Microfrontend Context, we can [pass an eventBus](./chassis/src/components/AppRouter.tsx#L77) to our microfrontends, which they can use to communicate across the various apps.
 
 ## Contributing
 
@@ -148,14 +148,14 @@ I've been toying with the idea of passing a tanstack query client, as part of th
 
 ### 2. Demonstrate communicating with the Event Bus
 
-A good example of this is the [aside-search app](https://github.com/mykeels/x-microfrontends/blob/master/mf-explore/src/aside-search.tsx#L12-L29),
+A good example of this is the [aside-search app](./mf-explore/src/aside-search.tsx#L12-L29),
 
 - emitting a `search` event that contains `{ "query": "Blah" }`,
 - having the chassis receive the event data and log to the console.
 
 ### 3. Demonstrate route-level slots
 
-To enhance the above, the [explore app](https://github.com/mykeels/x-microfrontends/blob/master/mf-explore/config-overrides.js#L20-L22) could
+To enhance the above, the [explore app](./mf-explore/config-overrides.js#L20-L22) could
 
 - expose a route-level slot that targets `/explore`, that the chassis can navigate to, - passing the `query` as a route search param..
 
