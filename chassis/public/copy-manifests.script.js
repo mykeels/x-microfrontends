@@ -1,5 +1,8 @@
 const fs = require("fs");
 const path = require("path");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 (async () => {
     const outputDir = path.join(__dirname, "./mfs");
@@ -11,7 +14,7 @@ const path = require("path");
         .map(manifest => JSON.parse(manifest))
         .map(manifest => ({
             ...manifest,
-            entry: `/mfs/${manifest.scope}/remoteEntry.js`
+            entry: `${process.env.PUBLIC_URL || ""}/mfs/${manifest.scope}/remoteEntry.js`
         }));
     console.log({
         manifests
