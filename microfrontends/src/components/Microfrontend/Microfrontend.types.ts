@@ -61,9 +61,6 @@ export type MicrofrontendMountProps = {
   eventBus?: MicrofrontendEventBus;
   layout: MicrofrontendLayout;
   user?: { permissions: MicrofrontendPermission[] };
-  rpcClient?: (
-    endpoint: string
-  ) => <TMessage>(message: TMessage) => Promise<any>;
   ErrorBoundary: (props: { children: any }) => JSX.Element;
 };
 

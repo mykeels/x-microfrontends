@@ -22,29 +22,32 @@ import { Microfrontend } from "microfrontends";
 
 ```jsx
 import { MicrofrontendScreen } from "microfrontends";
-import { useNavigate, Switch, Route } from "react-router-dom";
+import { useNavigate, BrowserRouter, Routes, Route } from "react-router-dom";
 
 import HomeScreen from "./components/HomeScreen";
-import { getMicrofrontendManifests } from "./services/microfrontends.service";
 
 export const AppRoutes = () => {
   const navigate = useNavigate();
   return (
-    <Switch>
-      <Route exact path="/" component={HomeScreen} />
-      <Route
-        path="*"
-        component={(props) => (
-          <MicrofrontendScreen
-            getMicrofrontendManifests={getMicrofrontendManifests}
-            Fallback={() => <div>Page Not Found</div>}
-            Loading={() => <div>...Loading...</div>}
-            navigate={navigate}
-            {...props}
-          />
-        )}
-      />
-    </Switch>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" component={HomeScreen} />
+        <Route
+          path="*"
+          component={(props) => (
+            <MicrofrontendScreen
+              getMicrofrontendManifests={async () =>
+                fetch("/microfrontend-manifests.json").then((res) => res.json())
+              }
+              Fallback={() => <div>Page Not Found</div>}
+              Loading={() => <div>...Loading...</div>}
+              navigate={navigate}
+              {...props}
+            />
+          )}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 };
 ```
