@@ -6,6 +6,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "build": "craco build",
+    "copy:env": "cpx .env.sample .env",
     "copy:manifests": "node ./build/copy-manifests.script.js",
     "start": "craco start",
     "test": "craco test"

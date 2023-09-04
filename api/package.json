@@ -7,9 +7,10 @@
   "scripts": {
     "prebuild": "npm run generate:routes",
     "build": "tsup src/index.ts --dts",
-    "dev": "npm run prebuild && tsx watch src/index.ts",
+    "start": "npm run prebuild && tsx watch src/index.ts",
     "generate:routes": "tsoa spec-and-routes",
     "watch:routes": "watch \"npm run generate:routes\" src/domains",
+    "copy:env": "cpx .env.sample .env",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
