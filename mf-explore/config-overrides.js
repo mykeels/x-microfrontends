@@ -20,7 +20,9 @@ module.exports = function override(config, env) {
         "./layout": "./src/layout.tsx",
         "./nav-explore": "./src/nav-explore.tsx",
         "./aside-search": "./src/aside-search.tsx",
-        "./aside-waddup": "./src/aside-waddup.tsx"
+        "./aside-waddup": "./src/aside-waddup.tsx",
+        "./layout": "./src/layout.tsx",
+        "./main": "./src/main.tsx",
       },
       shared: {
         react: {

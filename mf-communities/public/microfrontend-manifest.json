@@ -19,8 +19,8 @@
     ],
     "main:content": [
       {
-        "name": "Communities",
-        "module": "./nav-communities"
+        "name": "Main",
+        "module": "./main"
       }
     ]
   }

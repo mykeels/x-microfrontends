@@ -29,7 +29,11 @@ export default register(pkg.name, "./layout", {
       <React.StrictMode>
         <MicrofrontendContext.Provider value={props as any}>
           <QueryClientProvider client={queryClient}>
-            <MicrofrontendSlot name="layout" {...{ content: pkg.name }} />
+            <MicrofrontendSlot
+              className="contents"
+              name="layout"
+              {...{ content: pkg.name }}
+            />
           </QueryClientProvider>
         </MicrofrontendContext.Provider>
       </React.StrictMode>

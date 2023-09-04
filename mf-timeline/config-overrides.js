@@ -19,7 +19,7 @@ module.exports = function override(config, env) {
       exposes: {
         "./nav-home": "./src/nav-home.tsx",
         "./nav-post": "./src/nav-post.tsx",
-        "./index": "./src/timeline.tsx"
+        "./main": "./src/main.tsx"
       },
       shared: {
         react: {

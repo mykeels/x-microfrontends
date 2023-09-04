@@ -28,6 +28,12 @@
         "module": "./aside-waddup",
         "priority": 2
       }
+    ],
+    "main:content": [
+      {
+        "name": "Main",
+        "module": "./main"
+      }
     ]
   }
 }

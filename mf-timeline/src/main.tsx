@@ -778,7 +778,7 @@ function App() {
   );
 }
 
-export default register(pkg.name, "./index", {
+export default register(pkg.name, "./main", {
   mount: (containerRef, props) => {
     const container = getHTMLElement(containerRef);
     if (container?.getAttribute("data-mf-mounted") === "true") {
