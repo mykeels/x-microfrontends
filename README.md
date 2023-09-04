@@ -12,6 +12,7 @@ See [Demo](https://mykeels.github.io/x-microfrontends).
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [How it works](#how-it-works)
+- [Cool tricks with Microfrontends](#cool-tricks-with-microfrontends)
 - [Contributing](#contributing)
 - [License](#license)
 - [Credits](#credits)
@@ -75,7 +76,7 @@ See [example in mf-timeline](./mf-timeline/public/microfrontend-manifest.json#L2
 - module: `./unused-root-module.js`
 - entry: `http://localhost:4001/remoteEntry.js`
 
-Notice that the `module: ./unused-root-module.js` is incorrect compared to the [3 exposed apps](./mf-timeline/config-overrides.js#L19-L23) in its webpack module federation config. This is because the manifest can have one root module, and multiple [slots](#what-are-slots) module, so it helps to reserve the root module for route slots.
+Notice that the `module: ./unused-root-module.js` is incorrect compared to the [3 exposed apps](./mf-timeline/config-overrides.js#L19-L23) in its webpack module federation config. This is because the manifest can have multiple [slots](#what-are-slots) modules, so it helps to reserve the root module for route slots.
 
 #### What are Slots?
 
@@ -103,13 +104,15 @@ Slots can be rendered either:
 
 When matching slots are found, their:
 
-- `entry` script is loaded on the DOM
+- `entry` script (usually `remoteEntry.js`) is loaded on the DOM
 - we initialize the exposed `module` we want
-- using the exposed functions, we can `mount` the app to an HTML element and `unmount` when done.
+- using the exposed [mount and unmount functions](#mount-and-unmount), we can:
+  - `mount` the app to an HTML element
+  - and `unmount` when done.
 
 #### Mount and Unmount?
 
-Every exposed file exports a default:
+Every exposed app exports as default:
 
 ```js
 export default {
@@ -120,7 +123,7 @@ export default {
 };
 ```
 
-such as [in mf-timeline](./mf-timeline/src/timeline.tsx#L818-L840).
+such as [in mf-timeline](./mf-timeline/src/main.tsx#L818-L840).
 
 #### What are mount props?
 
@@ -133,6 +136,42 @@ Having such a simple interface instead of exporting say a React component direct
 One of the properties of the microfrontend-manifest.json I did not talk about is the `events`, which may expose a mapping of event names to a [JSON schema](https://json-schema.org/) object that describes its data.
 
 Using the Microfrontend Context, we can [pass an eventBus](./chassis/src/components/AppRouter.tsx#L77) to our microfrontends, which they can use to communicate across the various apps.
+
+## Cool tricks with Microfrontends
+
+All the above sounds like a lot if there is no clear advantage. Besides the team and management advantages of independence and being able to iterate simultaneously on multiple parts of the product, here are some technical advantages to using this architectural pattern.
+
+### 1. Show off your work to a colleague
+
+Imagine you're working on the Timeline project, and you've deployed your work to staging, so it lives at `https://staging.x.com/mfs/timeline/` while production is at `https://x.com`.
+
+You could ensure your page takes an `?override_manifest` query string, so you send a URL like:
+
+```txt
+https://x.com?override_manifest=https://staging.x.com/mfs/timeline/microfrontend-manifest.json
+```
+
+to your colleague, and they would see the new funky thing you have in staging, in the production environment, because it would load the remoteEntry.js from staging.
+
+### 2. Debug production in localhost
+
+A tangent of the above is that when you want to test a new feature in production, or debug a problem, you don't need to wait until your code gets to production, because you can load the following URL:
+
+```txt
+https://x.com?override_manifest=http://localhost:4001/microfrontend-manifest.json
+```
+
+and instantly have your localhost-served copy of the Timeline project, running in the production web page, with webpack hot-reload.
+
+Be sure to limit the domains that can be used to override your manifests to `localhost` and other domains you control.
+
+### 3. Instant Rollbacks
+
+Because we are dealing with SPAs, we can easily maintain the say last 50 deployed versions of each microfrontend, because storage and CDN are relatively cheap.
+
+This means that if something happens with the latest 1.2.3 version of the Timeline such as `https://x.com/mfs/timeline/1.2.3/remoteEntry.js`, then we can quickly change the remoteEntry.js location to one we know that works e.g. `https://x.com/mfs/timeline/1.2.0/remoteEntry.js`, and all your users need to do is refresh to get the latest.
+
+You could even push a notification to the web page to prompt them to refresh when this happens.
 
 ## Contributing
 
