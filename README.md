@@ -74,10 +74,10 @@ To aid in dynamic remote resolution, each microfrontend publishes a `microfronte
 See [example in mf-timeline](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/public/microfrontend-manifest.json#L1-L28), where we have a
 
 - scope: `timeline`
-- module: `./unused-module.js`
+- module: `./unused-root-module.js`
 - entry: `http://localhost:4001/remoteEntry.js`
 
-Notice that the `module: ./unused-module.js` is incorrect compared to the [3 exposed files](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/config-overrides.js#L19-L23) in its webpack module federation config. This is because the manifest can have one root module, and multiple slots module.
+Notice that the `module: ./unused-root-module.js` is incorrect compared to the [3 exposed files](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/config-overrides.js#L19-L23) in its webpack module federation config. This is because the manifest can have one root module, and multiple [slots](#what-are-slots) module, so it helps to reserve the root module for route slots.
 
 #### What are Slots?
 
@@ -89,7 +89,14 @@ Notice that the `module: ./unused-module.js` is incorrect compared to the [3 exp
 
 Slots can be rendered either:
 
-- directly on the route with [MicrofrontendScreen](./microfrontends/src/components/MicrofrontendScreen/README.md), making them a route-level slot
+- directly on the route with [MicrofrontendScreen](./microfrontends/src/components/MicrofrontendScreen/README.md), making them a route-level slot.
+  - To specify routes, you would use the `slots.routes` property of the microfrontend-manifest.json file, which works:
+    - just the same as other slots,
+    - and lets you add a `"route": "/explore/*"` property, specifying its route.
+  - You can get away with having one route slot that resides in the root, especially if your exposed app includes its own BrowserRouter and handles its own navigation, relying on the `navigate` [mount prop](#what-are-mount-props) when it needs to navigate to a route controlled by its parent.
+  - Or you can choose to expose an app per route.
+    - just the same as other slots,
+    - and lets you add a `"route": "/explore/*"` property, specifying its route.
 - directly within an HTML Element with [MicrofrontendSlot](./microfrontends/src/components/MicrofrontendSlot/README.md), making them a non route-level slot.
 
 #### Loading Microfrontends
@@ -114,6 +121,8 @@ export default {
 ```
 
 such as [in mf-timeline](https://github.com/mykeels/x-microfrontends/blob/master/mf-timeline/src/timeline.tsx#L818-L840).
+
+#### What are mount props?
 
 the [mount function's props parameter](https://github.com/mykeels/x-microfrontends/blob/master/microfrontends/src/components/Microfrontend/Microfrontend.types.ts#L56-L65) contain data and functions we pass down to every microfrontend.
 
@@ -149,6 +158,10 @@ A good example of this is the [aside-search app](https://github.com/mykeels/x-mi
 To enhance the above, the [explore app](https://github.com/mykeels/x-microfrontends/blob/master/mf-explore/config-overrides.js#L20-L22) could
 
 - expose a route-level slot that targets `/explore`, that the chassis can navigate to, - passing the `query` as a route search param..
+
+### 4. Clean up this README
+
+Oh man, I wrote this in a few sleep-deprived hours, so this could use some work. Send help!
 
 ## License
 
