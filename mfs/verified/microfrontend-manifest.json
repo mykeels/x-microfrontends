@@ -18,6 +18,13 @@
         "module": "./aside-subscribe",
         "priority": 1
       }
+    ],
+    "main:content": [
+      {
+        "name": "Main",
+        "module": "./main",
+        "route": "/verified/*"
+      }
     ]
   }
 }

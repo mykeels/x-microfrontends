@@ -1,28 +1,32 @@
 {
   "files": {
-    "main.js": "/static/js/main.ffb3fe0f.js",
+    "main.js": "/static/js/main.d0d082e3.js",
     "notifications.js": "/remoteEntry.js",
-    "static/js/src_nav-notifications_tsx.ca90e45c.chunk.js": "/static/js/src_nav-notifications_tsx.ca90e45c.chunk.js",
+    "static/js/src_nav-notifications_tsx.52bf0a54.chunk.js": "/static/js/src_nav-notifications_tsx.52bf0a54.chunk.js",
     "static/js/src_aside-follow-suggestions_tsx.80f6a7b6.chunk.js": "/static/js/src_aside-follow-suggestions_tsx.80f6a7b6.chunk.js",
+    "static/js/src_layout_tsx.5be8e8e1.chunk.js": "/static/js/src_layout_tsx.5be8e8e1.chunk.js",
+    "static/js/src_main_tsx.18126796.chunk.js": "/static/js/src_main_tsx.18126796.chunk.js",
     "static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9d1109c8.chunk.js": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9d1109c8.chunk.js",
     "static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.c1e8a6d3.chunk.js": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.c1e8a6d3.chunk.js",
     "static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.0f53e753.chunk.js": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.0f53e753.chunk.js",
-    "static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.a640a5ff.chunk.js": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.a640a5ff.chunk.js",
+    "static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.308d2524.chunk.js": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.308d2524.chunk.js",
     "static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.039091d8.chunk.js": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.039091d8.chunk.js",
-    "static/js/microfrontends_dist_index_js-package_json.293908a3.chunk.js": "/static/js/microfrontends_dist_index_js-package_json.293908a3.chunk.js",
+    "static/js/microfrontends_dist_index_js-package_json.7cef20a3.chunk.js": "/static/js/microfrontends_dist_index_js-package_json.7cef20a3.chunk.js",
     "index.html": "/index.html",
-    "main.ffb3fe0f.js.map": "/static/js/main.ffb3fe0f.js.map",
+    "main.d0d082e3.js.map": "/static/js/main.d0d082e3.js.map",
     "remoteEntry.js.map": "/remoteEntry.js.map",
-    "src_nav-notifications_tsx.ca90e45c.chunk.js.map": "/static/js/src_nav-notifications_tsx.ca90e45c.chunk.js.map",
+    "src_nav-notifications_tsx.52bf0a54.chunk.js.map": "/static/js/src_nav-notifications_tsx.52bf0a54.chunk.js.map",
     "src_aside-follow-suggestions_tsx.80f6a7b6.chunk.js.map": "/static/js/src_aside-follow-suggestions_tsx.80f6a7b6.chunk.js.map",
+    "src_layout_tsx.5be8e8e1.chunk.js.map": "/static/js/src_layout_tsx.5be8e8e1.chunk.js.map",
+    "src_main_tsx.18126796.chunk.js.map": "/static/js/src_main_tsx.18126796.chunk.js.map",
     "node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9d1109c8.chunk.js.map": "/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9d1109c8.chunk.js.map",
     "vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.c1e8a6d3.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.c1e8a6d3.chunk.js.map",
     "vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.0f53e753.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-query_3_39_3_react-dom_18_2_0_react_18_2_0_node_modules_react-11ea29.0f53e753.chunk.js.map",
-    "vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.a640a5ff.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.a640a5ff.chunk.js.map",
+    "vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.308d2524.chunk.js.map": "/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.308d2524.chunk.js.map",
     "vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.039091d8.chunk.js.map": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.039091d8.chunk.js.map",
-    "microfrontends_dist_index_js-package_json.293908a3.chunk.js.map": "/static/js/microfrontends_dist_index_js-package_json.293908a3.chunk.js.map"
+    "microfrontends_dist_index_js-package_json.7cef20a3.chunk.js.map": "/static/js/microfrontends_dist_index_js-package_json.7cef20a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.ffb3fe0f.js"
+    "static/js/main.d0d082e3.js"
   ]
 }

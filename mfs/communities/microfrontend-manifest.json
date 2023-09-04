@@ -11,6 +11,13 @@
         "module": "./nav-communities",
         "priority": 4
       }
+    ],
+    "main:content": [
+      {
+        "name": "Main",
+        "module": "./main",
+        "route": "/communities/*"
+      }
     ]
   }
 }

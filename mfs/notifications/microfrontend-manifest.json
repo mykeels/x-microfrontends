@@ -18,6 +18,13 @@
         "module": "./aside-follow-suggestions",
         "priority": 3
       }
+    ],
+    "main:content": [
+      {
+        "name": "Main",
+        "module": "./main",
+        "route": "/notifications/*"
+      }
     ]
   }
 }

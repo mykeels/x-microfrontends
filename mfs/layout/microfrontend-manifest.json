@@ -1,0 +1,20 @@
+{
+  "scope": "layout",
+  "module": "./unused-root-module.js",
+  "entry": "http://localhost:4007/remoteEntry.js",
+  "events": {},
+  "slots": {
+    "routes": [
+      {
+        "route": "/*",
+        "module": "./layout"
+      }
+    ],
+    "layout": [
+      {
+        "name": "Layout",
+        "module": "./layout"
+      }
+    ]
+  }
+}

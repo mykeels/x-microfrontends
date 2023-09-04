@@ -12,6 +12,13 @@
           "module": "./nav-communities",
           "priority": 4
         }
+      ],
+      "main:content": [
+        {
+          "name": "Main",
+          "module": "./main",
+          "route": "/communities/*"
+        }
       ]
     }
   },
@@ -21,12 +28,7 @@
     "entry": "/mfs/explore/remoteEntry.js",
     "events": {},
     "slots": {
-      "routes": [
-        {
-          "route": "/explore/*",
-          "module": "./aside-waddup"
-        }
-      ],
+      "routes": [],
       "nav:item": [
         {
           "name": "Explore",
@@ -45,6 +47,33 @@
           "module": "./aside-waddup",
           "priority": 2
         }
+      ],
+      "main:content": [
+        {
+          "name": "Main",
+          "module": "./main",
+          "route": "/explore/*"
+        }
+      ]
+    }
+  },
+  {
+    "scope": "layout",
+    "module": "./unused-root-module.js",
+    "entry": "/mfs/layout/remoteEntry.js",
+    "events": {},
+    "slots": {
+      "routes": [
+        {
+          "route": "/*",
+          "module": "./layout"
+        }
+      ],
+      "layout": [
+        {
+          "name": "Layout",
+          "module": "./layout"
+        }
       ]
     }
   },
@@ -60,6 +89,13 @@
           "name": "Messages",
           "module": "./nav-messages",
           "priority": 3
+        }
+      ],
+      "main:content": [
+        {
+          "name": "Main",
+          "module": "./main",
+          "route": "/messages/*"
         }
       ]
     }
@@ -83,6 +119,13 @@
           "name": "Who to follow",
           "module": "./aside-follow-suggestions",
           "priority": 3
+        }
+      ],
+      "main:content": [
+        {
+          "name": "Main",
+          "module": "./main",
+          "route": "/notifications/*"
         }
       ]
     }
@@ -109,8 +152,9 @@
       ],
       "main:content": [
         {
-          "name": "Timeline",
-          "module": "./index"
+          "name": "Main",
+          "module": "./main",
+          "route": "/"
         }
       ]
     }
@@ -134,6 +178,13 @@
           "name": "Subscribe",
           "module": "./aside-subscribe",
           "priority": 1
+        }
+      ],
+      "main:content": [
+        {
+          "name": "Main",
+          "module": "./main",
+          "route": "/verified/*"
         }
       ]
     }

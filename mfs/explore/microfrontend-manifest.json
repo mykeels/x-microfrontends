@@ -4,12 +4,7 @@
   "entry": "http://localhost:4002/remoteEntry.js",
   "events": {},
   "slots": {
-    "routes": [
-      {
-        "route": "/explore/*",
-        "module": "./aside-waddup"
-      }
-    ],
+    "routes": [],
     "nav:item": [
       {
         "name": "Explore",
@@ -27,6 +22,13 @@
         "name": "What's happening",
         "module": "./aside-waddup",
         "priority": 2
+      }
+    ],
+    "main:content": [
+      {
+        "name": "Main",
+        "module": "./main",
+        "route": "/explore/*"
       }
     ]
   }

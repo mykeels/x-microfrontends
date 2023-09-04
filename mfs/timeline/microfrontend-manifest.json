@@ -20,8 +20,9 @@
     ],
     "main:content": [
       {
-        "name": "Timeline",
-        "module": "./index"
+        "name": "Main",
+        "module": "./main",
+        "route": "/"
       }
     ]
   }
