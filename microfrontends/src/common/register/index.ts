@@ -143,12 +143,16 @@ export const register = (
 ): MicrofrontendController => {
   const $ctrl = getMicrofrontendController(scope, module);
   $ctrl.tracker = $ctrl.tracker || instanceTracker($ctrl);
-  const runUnmountFn = (unmount: () => {}) => {
+  const runUnmountFn = (unmount: () => () => void) => {
     $ctrl.tracker?.decrement();
     if ($ctrl.tracker?.hasZeroInstances()) {
       unloadMicrofrontendAssets(scope, $ctrl.tracker);
     }
-    return unmount();
+    return () => {
+      setTimeout(() => {
+        unmount()();
+      });
+    };
   };
   const getHTMLElement = (ref: HTMLElement | string) =>
     ref instanceof HTMLElement ? ref : document.getElementById(ref);

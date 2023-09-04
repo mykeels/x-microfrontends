@@ -5,17 +5,15 @@ import { ReactQueryDevtools } from "react-query/devtools";
 
 import { AppRouter } from "./components/index.ts";
 
+const queryClient = new QueryClient();
+
 function App({
   getManifestsUri = process.env.NODE_ENV === "production"
     ? "/microfrontend-manifests.json"
     : process.env.REACT_APP_API_ROOT_URL || "http://localhost:3333",
 } = {}) {
-  const queryClientRef = React.useRef<QueryClient>();
-  if (!queryClientRef.current) {
-    queryClientRef.current = new QueryClient();
-  }
   return (
-    <QueryClientProvider client={queryClientRef.current}>
+    <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools />
       <AppRouter
         getMicrofrontendManifests={async () =>

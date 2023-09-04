@@ -41,14 +41,19 @@ export const MicrofrontendScreen = ({
   const location = useLocation();
   const url = location.pathname;
   const {
-    data: manifests = [],
+    data: manifests = "manifests" in props ? props.manifests : [],
     isLoading,
     isError,
     error,
-  } = useQuery("manifests", () =>
-    "getMicrofrontendManifests" in props
-      ? props.getMicrofrontendManifests()
-      : props.manifests
+  } = useQuery(
+    "manifests",
+    () =>
+      "getMicrofrontendManifests" in props
+        ? props.getMicrofrontendManifests()
+        : props.manifests,
+    {
+      enabled: "getMicrofrontendManifests" in props,
+    }
   );
   const [targetMF] =
     getMicrofrontendsMatchingLocation(manifests || [], url, {
