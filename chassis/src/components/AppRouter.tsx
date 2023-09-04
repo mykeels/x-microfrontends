@@ -46,7 +46,12 @@ const AppRoutes = ({ manifests }: { manifests: MicrofrontendManifest[] }) => {
       }}
     >
       <Routes>
-        <Route path="/" element={<MicrofrontendSlot name="layout" />} />
+        <Route
+          path="/"
+          element={
+            <MicrofrontendSlot name="layout" {...{ content: "timeline" }} />
+          }
+        />
         <Route
           path="*"
           element={

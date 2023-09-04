@@ -19,6 +19,7 @@ module.exports = function override(config, env) {
       exposes: {
         "./nav-notifications": "./src/nav-notifications.tsx",
         "./aside-follow-suggestions": "./src/aside-follow-suggestions.tsx",
+        "./layout": "./src/layout.tsx",
       },
       shared: {
         react: {

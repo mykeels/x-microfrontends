@@ -7,7 +7,7 @@
     "routes": [
       {
         "route": "/explore/*",
-        "module": "./aside-waddup"
+        "module": "./layout"
       }
     ],
     "nav:item": [

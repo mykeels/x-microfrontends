@@ -35,6 +35,8 @@ export const MicrofrontendSlot = ({
   // @ts-ignore
   const transformedSlots = transform(slots);
 
+  console.log(contextProps);
+
   return (
     <>
       {transformedSlots.map((slot, index) => (

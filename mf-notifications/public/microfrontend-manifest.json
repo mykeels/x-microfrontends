@@ -4,7 +4,12 @@
   "entry": "http://localhost:4003/remoteEntry.js",
   "events": {},
   "slots": {
-    "routes": [],
+    "routes": [
+      {
+        "route": "/notifications/*",
+        "module": "./layout"
+      }
+    ],
     "nav:item": [
       {
         "name": "Notifications",

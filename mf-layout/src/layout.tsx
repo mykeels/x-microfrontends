@@ -20,7 +20,7 @@ const sortByPriority = (slots: MicrofrontendSlot[]) =>
     return (a.priority || 0) - (b.priority || 0);
   });
 
-const Layout = () => {
+const Layout = ({ content = "home" }: { content?: string }) => {
   return (
     <>
       <div className="new-post-button">
@@ -51,7 +51,11 @@ const Layout = () => {
           </ul>
           <MicrofrontendSlot className="contents" name="nav:footer" />
         </nav>
-        <MicrofrontendSlot className="contents" name="main:content" />
+        <MicrofrontendSlot
+          className="contents"
+          name="main:content"
+          transform={(slots) => slots.filter((slot) => slot.scope === content)}
+        />
         <aside className="flex flex-col self-start right sticky top-[-224px] w-1/4">
           <div className="container-right">
             <MicrofrontendSlot
@@ -88,7 +92,13 @@ export default register(pkg.name, "./layout", {
       <React.StrictMode>
         <MicrofrontendContext.Provider value={props as any}>
           <QueryClientProvider client={queryClient}>
-            <Layout />
+            <Layout
+              content={
+                "content" in props && typeof props.content === "string"
+                  ? props.content
+                  : "home"
+              }
+            />
           </QueryClientProvider>
         </MicrofrontendContext.Provider>
       </React.StrictMode>

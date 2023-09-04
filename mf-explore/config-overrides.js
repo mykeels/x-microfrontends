@@ -17,6 +17,7 @@ module.exports = function override(config, env) {
       name: pkg.name,
       filename: "remoteEntry.js",
       exposes: {
+        "./layout": "./src/layout.tsx",
         "./nav-explore": "./src/nav-explore.tsx",
         "./aside-search": "./src/aside-search.tsx",
         "./aside-waddup": "./src/aside-waddup.tsx"

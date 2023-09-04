@@ -4,7 +4,12 @@
   "entry": "http://localhost:4004/remoteEntry.js",
   "events": {},
   "slots": {
-    "routes": [],
+    "routes": [
+      {
+        "route": "/messages/*",
+        "module": "./layout"
+      }
+    ],
     "nav:item": [
       {
         "name": "Messages",

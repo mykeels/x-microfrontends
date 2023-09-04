@@ -18,7 +18,8 @@ module.exports = function override(config, env) {
       filename: "remoteEntry.js",
       exposes: {
         "./nav-verified": "./src/nav-verified.tsx",
-        "./aside-subscribe": "./src/aside-subscribe.tsx"
+        "./aside-subscribe": "./src/aside-subscribe.tsx",
+        "./layout": "./src/layout.tsx",
       },
       shared: {
         react: {

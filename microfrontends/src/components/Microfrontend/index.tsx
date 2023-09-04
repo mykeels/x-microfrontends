@@ -111,7 +111,7 @@ export const Microfrontend = ({
         }
       });
     };
-  }, [isMounted, isError, entry, module, retryCount]);
+  }, [isMounted, isError, entry, module, props.url, retryCount]);
 
   return isError ? (
     <ErrorFallback

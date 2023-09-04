@@ -4,7 +4,12 @@
   "entry": "http://localhost:4006/remoteEntry.js",
   "events": {},
   "slots": {
-    "routes": [],
+    "routes": [
+      {
+        "route": "/verified/*",
+        "module": "./layout"
+      }
+    ],
     "nav:item": [
       {
         "name": "Verified",
