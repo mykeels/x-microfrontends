@@ -2,6 +2,8 @@
 
 x-microfrontends is an open-source project that demonstrates the concept of microfrontends by building a Twitter clone with seven (7) separate React projects that seamlessly work together to create a complete web application.
 
+I built this as a demo for my ["Scaling teams with Microfrontends - Every CTO's dream"](https://www.papercall.io/talks/254933/children/254934) talk at SysConf 2023.
+
 See [Demo](https://mykeels.github.io/x-microfrontends).
 
 ## Table of Contents
