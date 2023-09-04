@@ -4,12 +4,7 @@
   "entry": "http://localhost:4005/remoteEntry.js",
   "events": {},
   "slots": {
-    "routes": [
-      {
-        "route": "/communities/*",
-        "module": "./layout"
-      }
-    ],
+    "routes": [],
     "nav:item": [
       {
         "name": "Communities",
@@ -20,7 +15,8 @@
     "main:content": [
       {
         "name": "Main",
-        "module": "./main"
+        "module": "./main",
+        "route": "/communities/*"
       }
     ]
   }

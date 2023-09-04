@@ -32,10 +32,7 @@ export const MicrofrontendSlot = ({
     user,
   });
 
-  // @ts-ignore
-  const transformedSlots = transform(slots);
-
-  console.log(contextProps);
+  const transformedSlots = transform?.(slots) || slots;
 
   return (
     <>

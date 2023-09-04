@@ -5,19 +5,14 @@ import { EventEmitter } from "eventemitter3";
 import {
   MicrofrontendContext,
   MicrofrontendManifest,
-  MicrofrontendScreen,
   ErrorBoundary,
-  MicrofrontendSlot,
 } from "microfrontends";
-
-import "./Layout/Layout.css";
-import pkg from "../../package.json";
 import { useQuery } from "react-query";
 
+import { Layout } from "./Layout/index.tsx";
+
 const eventBus = new EventEmitter();
-const Loading = () => (
-  <div>This is a Loading component. It should look much better than this.</div>
-);
+
 const Fallback = () => (
   <div>Something went wrong. This is a Fallback component.</div>
 );
@@ -35,6 +30,7 @@ const AppRoutes = ({ manifests }: { manifests: MicrofrontendManifest[] }) => {
         eventBus,
         fetch,
         homedir,
+        url: location.pathname,
         user: { permissions: [] },
         layout: {
           navItems: [],
@@ -46,34 +42,7 @@ const AppRoutes = ({ manifests }: { manifests: MicrofrontendManifest[] }) => {
       }}
     >
       <Routes>
-        <Route
-          path="/"
-          element={
-            <MicrofrontendSlot name="layout" {...{ content: "timeline" }} />
-          }
-        />
-        <Route
-          path="*"
-          element={
-            <MicrofrontendScreen
-              Loading={Loading}
-              Fallback={Fallback}
-              manifests={manifests}
-              host={pkg.name}
-              eventBus={eventBus}
-              fetch={window.fetch}
-              homedir={homedir}
-              navigate={navigate}
-              user={{
-                permissions: [],
-              }}
-              layout={{
-                navItems: [],
-                logout: () => {},
-              }}
-            />
-          }
-        />
+        <Route path="*" element={<Layout />} />
       </Routes>
     </MicrofrontendContext.Provider>
   );

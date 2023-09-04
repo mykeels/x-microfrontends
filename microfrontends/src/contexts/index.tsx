@@ -5,6 +5,8 @@ import { ErrorBoundary, MicrofrontendMountProps } from "../components";
 const defaults = {
   homedir: "/",
 
+  url: "/",
+
   navigate: () => {},
 
   manifests: [],

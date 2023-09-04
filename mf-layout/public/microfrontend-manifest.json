@@ -4,12 +4,16 @@
   "entry": "http://localhost:4007/remoteEntry.js",
   "events": {},
   "slots": {
-    "routes": [],
+    "routes": [
+      {
+        "route": "/*",
+        "module": "./layout"
+      }
+    ],
     "layout": [
       {
         "name": "Layout",
-        "module": "./layout",
-        "priority": 5
+        "module": "./layout"
       }
     ]
   }

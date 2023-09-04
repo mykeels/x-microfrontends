@@ -1,7 +1,11 @@
-import { MicrofrontendSlot } from "microfrontends";
+import {
+  MicrofrontendContext,
+  MicrofrontendSlot,
+  canMatchRoute,
+} from "microfrontends";
 import "./Layout.css";
 
-import React from "react";
+import React, { useContext } from "react";
 
 const sortByPriority = (slots: MicrofrontendSlot[]) =>
   slots.sort((a, b) => {
@@ -9,6 +13,8 @@ const sortByPriority = (slots: MicrofrontendSlot[]) =>
   });
 
 export const Layout = () => {
+  const { homedir } = useContext(MicrofrontendContext);
+
   return (
     <>
       <div className="new-post-button">
@@ -39,7 +45,20 @@ export const Layout = () => {
           </ul>
           <MicrofrontendSlot className="contents" name="nav:footer" />
         </nav>
-        <MicrofrontendSlot className="contents" name="main:content" />
+        <MicrofrontendSlot
+          className="contents"
+          name="main:content"
+          transform={(slots) => {
+            return slots.filter((slot) =>
+              "route" in slot &&
+              typeof slot.route === "string" &&
+              homedir &&
+              typeof homedir === "string"
+                ? canMatchRoute(homedir, slot.route)
+                : false
+            );
+          }}
+        />
         <aside className="flex flex-col self-start right sticky top-[-224px] w-1/4">
           <div className="container-right">
             <MicrofrontendSlot

@@ -55,6 +55,7 @@ type MicrofrontendAuth = MicrofrontendAuthOptions & { [key: string]: any };
 
 export type MicrofrontendMountProps = {
   homedir: string;
+  url: string;
   navigate: (href: string) => any;
   manifests: MicrofrontendManifest[];
   fetch: (input: RequestInfo, init?: RequestInit) => Promise<Response>;

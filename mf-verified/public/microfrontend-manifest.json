@@ -4,12 +4,7 @@
   "entry": "http://localhost:4006/remoteEntry.js",
   "events": {},
   "slots": {
-    "routes": [
-      {
-        "route": "/verified/*",
-        "module": "./layout"
-      }
-    ],
+    "routes": [],
     "nav:item": [
       {
         "name": "Verified",
@@ -27,7 +22,8 @@
     "main:content": [
       {
         "name": "Main",
-        "module": "./main"
+        "module": "./main",
+        "route": "/verified/*"
       }
     ]
   }

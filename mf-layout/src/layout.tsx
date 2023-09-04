@@ -2,8 +2,9 @@ import {
   register,
   MicrofrontendSlot,
   MicrofrontendContext,
+  canMatchRoute,
 } from "microfrontends";
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -20,7 +21,9 @@ const sortByPriority = (slots: MicrofrontendSlot[]) =>
     return (a.priority || 0) - (b.priority || 0);
   });
 
-const Layout = ({ content = "home" }: { content?: string }) => {
+const Layout = () => {
+  const { homedir, url } = useContext(MicrofrontendContext);
+
   return (
     <>
       <div className="new-post-button">
@@ -54,7 +57,17 @@ const Layout = ({ content = "home" }: { content?: string }) => {
         <MicrofrontendSlot
           className="contents"
           name="main:content"
-          transform={(slots) => slots.filter((slot) => slot.scope === content)}
+          key={url}
+          transform={(slots) => {
+            return slots.filter((slot) =>
+              "route" in slot &&
+              typeof slot.route === "string" &&
+              homedir &&
+              typeof homedir === "string"
+                ? canMatchRoute(homedir, slot.route)
+                : false
+            );
+          }}
         />
         <aside className="flex flex-col self-start right sticky top-[-224px] w-1/4">
           <div className="container-right">
@@ -92,13 +105,7 @@ export default register(pkg.name, "./layout", {
       <React.StrictMode>
         <MicrofrontendContext.Provider value={props as any}>
           <QueryClientProvider client={queryClient}>
-            <Layout
-              content={
-                "content" in props && typeof props.content === "string"
-                  ? props.content
-                  : "home"
-              }
-            />
+            <Layout />
           </QueryClientProvider>
         </MicrofrontendContext.Provider>
       </React.StrictMode>
