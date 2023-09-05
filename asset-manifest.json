@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.js": "/x-microfrontends/static/js/main.6ffd3220.js",
+    "main.js": "/x-microfrontends/static/js/main.697b3e77.js",
     "chassis.js": "/x-microfrontends/remoteEntry.js",
     "static/css/src_bootstrap_tsx.b293fc2b.chunk.css": "/x-microfrontends/static/css/src_bootstrap_tsx.b293fc2b.chunk.css",
-    "static/js/src_bootstrap_tsx.df62b8bb.chunk.js": "/x-microfrontends/static/js/src_bootstrap_tsx.df62b8bb.chunk.js",
+    "static/js/src_bootstrap_tsx.17233c44.chunk.js": "/x-microfrontends/static/js/src_bootstrap_tsx.17233c44.chunk.js",
     "static/js/node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js": "/x-microfrontends/static/js/node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js",
     "static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js": "/x-microfrontends/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js",
     "static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js": "/x-microfrontends/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js",
@@ -11,10 +11,10 @@
     "static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.b335b1ba.chunk.js": "/x-microfrontends/static/js/vendors-node_modules_pnpm_react-router-dom_6_15_0_react-dom_18_2_0_react_18_2_0_node_modules_-323b6a.b335b1ba.chunk.js",
     "static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js": "/x-microfrontends/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js",
     "index.html": "/x-microfrontends/index.html",
-    "main.6ffd3220.js.map": "/x-microfrontends/static/js/main.6ffd3220.js.map",
+    "main.697b3e77.js.map": "/x-microfrontends/static/js/main.697b3e77.js.map",
     "remoteEntry.js.map": "/x-microfrontends/remoteEntry.js.map",
     "src_bootstrap_tsx.b293fc2b.chunk.css.map": "/x-microfrontends/static/css/src_bootstrap_tsx.b293fc2b.chunk.css.map",
-    "src_bootstrap_tsx.df62b8bb.chunk.js.map": "/x-microfrontends/static/js/src_bootstrap_tsx.df62b8bb.chunk.js.map",
+    "src_bootstrap_tsx.17233c44.chunk.js.map": "/x-microfrontends/static/js/src_bootstrap_tsx.17233c44.chunk.js.map",
     "node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js.map": "/x-microfrontends/static/js/node_modules_pnpm_babel_runtime_7_22_11_node_modules_babel_runtime_helpers_esm_asyncToGenerat-b4f673.a240960b.chunk.js.map",
     "node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js.map": "/x-microfrontends/static/js/node_modules_pnpm_react_18_2_0_node_modules_react_index_js.9923a5f9.chunk.js.map",
     "vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js.map": "/x-microfrontends/static/js/vendors-node_modules_pnpm_react-dom_18_2_0_react_18_2_0_node_modules_react-dom_index_js.53acadf5.chunk.js.map",
@@ -23,6 +23,6 @@
     "vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js.map": "/x-microfrontends/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-1f51cd.b93a142d.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.6ffd3220.js"
+    "static/js/main.697b3e77.js"
   ]
 }
