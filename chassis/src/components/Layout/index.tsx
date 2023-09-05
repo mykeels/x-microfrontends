@@ -13,7 +13,7 @@ const sortByPriority = (slots: MicrofrontendSlot[]) =>
   });
 
 export const Layout = () => {
-  const { homedir } = useContext(MicrofrontendContext);
+  const { url } = useContext(MicrofrontendContext);
 
   return (
     <>
@@ -49,14 +49,13 @@ export const Layout = () => {
           className="contents"
           name="main:content"
           transform={(slots) => {
-            return slots.filter((slot) =>
-              "route" in slot &&
-              typeof slot.route === "string" &&
-              homedir &&
-              typeof homedir === "string"
-                ? canMatchRoute(homedir, slot.route)
-                : false
-            );
+            return slots.filter((slot) => {
+              const route =
+                "route" in slot && typeof slot.route === "string"
+                  ? slot.route
+                  : null;
+              return route ? canMatchRoute(url, route) : false;
+            });
           }}
         />
         <aside className="flex flex-col self-start right sticky top-[-224px] w-1/4">
