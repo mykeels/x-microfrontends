@@ -61,7 +61,7 @@ export const AppRouter = ({
     getMicrofrontendManifests([])
   );
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <AppRoutes manifests={manifests} />
     </BrowserRouter>
   );
