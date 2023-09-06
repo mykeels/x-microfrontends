@@ -77,18 +77,22 @@ async function overrideManifests(
 
   return await Promise.all(
     override_manifest
-      .filter((url) =>
-        allowedDomains.some((rgx) => {
+      .filter((url) => {
+        const isUrlAllowed = allowedDomains.some((rgx) => {
           try {
-            const isAllowedDomain = rgx.test(new URL(url).origin);
-            if (!isAllowedDomain)
-              console.warn("Domain rejected for manifest override", url);
-            return isAllowedDomain;
+            return rgx.test(new URL(url).origin);
           } catch {
             return null;
           }
-        })
-      )
+        });
+        if (!isUrlAllowed) {
+          console.warn(`URL is not allowed to override manifests.`, {
+            url,
+            allowedDomains,
+          });
+        }
+        return isUrlAllowed;
+      })
       .filter(Boolean)
       .map((url) =>
         fetch(url)
