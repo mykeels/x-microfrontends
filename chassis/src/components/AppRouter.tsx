@@ -58,7 +58,9 @@ export const AppRouter = ({
   getMicrofrontendManifests,
 }: MicrofrontendRoutesProps) => {
   const { data: manifests = [] } = useQuery("manifests", () =>
-    getMicrofrontendManifests([])
+    getMicrofrontendManifests([]).then((manifests) =>
+      overrideManifests(manifests)
+    )
   );
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -66,3 +68,79 @@ export const AppRouter = ({
     </BrowserRouter>
   );
 };
+
+async function overrideManifests(
+  manifests: MicrofrontendManifest[]
+): Promise<MicrofrontendManifest[]> {
+  const allowedDomains = [/mykeels.github.io$/, /localhost:\d{4,5}$/];
+  const { override_manifest = [] } = getSearchParams<"override_manifest">();
+
+  return await Promise.all(
+    override_manifest
+      .filter((url) =>
+        allowedDomains.some((rgx) => {
+          try {
+            const isAllowedDomain = rgx.test(new URL(url).origin);
+            if (!isAllowedDomain)
+              console.warn("Domain rejected for manifest override", url);
+            return isAllowedDomain;
+          } catch {
+            return null;
+          }
+        })
+      )
+      .filter(Boolean)
+      .map((url) =>
+        fetch(url)
+          .then((res) => res.json())
+          .then((data) => {
+            const urlParams = new URL(url);
+            return {
+              ...data,
+              entry: `${urlParams.origin}${urlParams.pathname.replace(
+                "/microfrontend-manifest.json",
+                ""
+              )}/remoteEntry.js`,
+            };
+          })
+          .catch((err) => {
+            console.error("Error fetching manifest", err);
+            return null;
+          })
+      )
+  )
+    .then((overrides: MicrofrontendManifest[]) => overrides.filter(Boolean))
+    .then((overrides) => {
+      return manifests
+        .map((manifest) => {
+          const override =
+            overrides.find((o) => o.scope === manifest.scope) || manifest;
+          return override;
+        })
+        .concat(
+          overrides.filter(
+            (o) => !manifests.map((m) => m.scope).includes(o.scope)
+          )
+        );
+    })
+    .then((manifests) => {
+      console.log(manifests);
+      return manifests;
+    });
+}
+
+function getSearchParams<TKeys extends string>(): {
+  [key in TKeys]: string[] | undefined;
+} {
+  const params = new URLSearchParams(
+    location.search ??
+      location.hash.split("?")?.[location.hash.split("?").length - 1]
+  );
+  const entries = {} as Record<any, string[]>;
+  for (let key of Array.from(params.keys())) {
+    entries[key] = params.getAll(key);
+  }
+  return entries as {
+    [key in TKeys]: string[] | undefined;
+  };
+}
