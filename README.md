@@ -6,6 +6,8 @@ I built this as a demo for my ["Scaling teams with Microfrontends - Every CTO's 
 
 See [Demo](https://mykeels.github.io/x-microfrontends).
 
+See [Slides](https://docs.google.com/presentation/d/10VkUfwX7NUJMl8jdT0q3qtk2C1RxG9AO4q-8DXjaFss/edit?usp=sharing).
+
 ## Table of Contents
 
 - [Overview](#overview)
