@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
-    "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "composite": true,
+    "resolveJsonModule": true,
+    "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["src", "./package.json"],
   "extends": "../tsconfig.base.json"
 }
