@@ -1,10 +1,10 @@
-packages
-microfrontends
-chassis
-mf-communities
-mf-explore
-mf-messages
-mf-notifications
-mf-timeline
-mf-verified
-api
+packages:
+  - microfrontends
+  - chassis
+  - mf-communities
+  - mf-explore
+  - mf-messages
+  - mf-notifications
+  - mf-timeline
+  - mf-verified
+  - api
