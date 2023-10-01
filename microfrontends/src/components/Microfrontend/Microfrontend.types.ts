@@ -95,9 +95,10 @@ export type MicrofrontendWindowRecord<
   };
 };
 
-export type MountFn = (
+type Prettify<T> = { [K in keyof T]: T[K] } & {};
+export type MountFn<TProps extends {} = {}> = (
   containerRef: string | HTMLElement,
-  props: Partial<MicrofrontendMountProps>
+  props: Prettify<TProps & Partial<MicrofrontendMountProps>>
 ) => () => any;
 export type UnmountFn = (containerRef: string | HTMLElement) => any;
 
@@ -108,12 +109,16 @@ export type MicrofrontendDefaultExport = {
   };
 };
 
-export type MicrofrontendController = {
-  mount: MountFn;
+export type MicrofrontendController<
+  TScope extends string = string,
+  TModule extends string = string,
+  TMountProps extends {} = {}
+> = {
+  mount: MountFn<TMountProps>;
   unmount: UnmountFn;
   instances: number;
-  scope: string;
-  module: string;
+  scope: TScope;
+  module: TModule;
   tracker?: {
     increment: () => void;
     decrement: () => void;
