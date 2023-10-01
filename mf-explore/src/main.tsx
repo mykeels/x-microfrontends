@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { MicrofrontendContext, register } from "microfrontends";
+import { MicrofrontendContext, withMountProps } from "microfrontends";
 
 import pkg from "../package.json";
 
@@ -30,6 +30,8 @@ function App() {
     </QueryClientProvider>
   );
 }
+
+const register = withMountProps<{ a: "3" }>();
 
 export default register(pkg.name, "./main", {
   mount: (containerRef, props) => {
