@@ -4,3 +4,5 @@ echo -E "
 " > ./package.json.d.ts
 
 cp ../tsconfig.app.json ./tsconfig.json
+
+npx tsc
