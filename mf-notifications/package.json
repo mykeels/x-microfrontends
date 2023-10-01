@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
+    "typings": "bash ../scripts/generate-package-typings.sh",
     "build": "craco build",
     "copy:build": "cpx \"build/**/*\" ../chassis/build/mfs/notifications",
     "copy:env": "cpx .env.sample .env",

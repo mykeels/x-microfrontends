@@ -131,3 +131,5 @@ dist
 .vscode
 build/
 /tailwind.config.js
+
+*.json.d.ts
