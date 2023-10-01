@@ -9,7 +9,7 @@ import pkg from "../package.json";
 const getHTMLElement = (ref: HTMLElement | string) =>
   ref instanceof HTMLElement ? ref : document.getElementById(ref);
 
-const Timeline = () => (
+const Notifications = () => (
   <section className="flex flex-col feed grow outline outline-yellow-200">
     <div className="flex flex-col home w-full">
       <div className="home-container w-full">
@@ -26,7 +26,7 @@ function App() {
   }
   return (
     <QueryClientProvider client={queryClientRef.current}>
-      <Timeline />
+      <Notifications />
     </QueryClientProvider>
   );
 }
