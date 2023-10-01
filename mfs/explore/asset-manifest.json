@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/static/js/main.a4f27039.js",
+    "main.js": "/static/js/main.b41d1704.js",
     "explore.js": "/remoteEntry.js",
     "static/js/src_nav-explore_tsx.eda35ae8.chunk.js": "/static/js/src_nav-explore_tsx.eda35ae8.chunk.js",
     "static/js/src_aside-search_tsx.bfe3d60e.chunk.js": "/static/js/src_aside-search_tsx.bfe3d60e.chunk.js",
@@ -13,7 +13,7 @@
     "static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.0ad4ca8f.chunk.js": "/static/js/vendors-node_modules_pnpm_classnames_2_3_2_node_modules_classnames_dedupe_js-node_modules_pnp-427fc3.0ad4ca8f.chunk.js",
     "static/js/microfrontends_dist_index_js-package_json.17e1d5fa.chunk.js": "/static/js/microfrontends_dist_index_js-package_json.17e1d5fa.chunk.js",
     "index.html": "/index.html",
-    "main.a4f27039.js.map": "/static/js/main.a4f27039.js.map",
+    "main.b41d1704.js.map": "/static/js/main.b41d1704.js.map",
     "remoteEntry.js.map": "/remoteEntry.js.map",
     "src_nav-explore_tsx.eda35ae8.chunk.js.map": "/static/js/src_nav-explore_tsx.eda35ae8.chunk.js.map",
     "src_aside-search_tsx.bfe3d60e.chunk.js.map": "/static/js/src_aside-search_tsx.bfe3d60e.chunk.js.map",
@@ -27,6 +27,6 @@
     "microfrontends_dist_index_js-package_json.17e1d5fa.chunk.js.map": "/static/js/microfrontends_dist_index_js-package_json.17e1d5fa.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a4f27039.js"
+    "static/js/main.b41d1704.js"
   ]
 }
