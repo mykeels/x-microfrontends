@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { MicrofrontendContext, withMountProps } from "microfrontends";
+import { MicrofrontendContext, register, z } from "microfrontends";
 
 import pkg from "../package.json";
 
@@ -778,8 +778,6 @@ function App() {
   );
 }
 
-const register = withMountProps<{ a: "3" }>();
-
 export default register(pkg.name, "./main", {
   mount: (containerRef, props) => {
     const container = getHTMLElement(containerRef);
@@ -813,4 +811,9 @@ export default register(pkg.name, "./main", {
   unmount: (containerRef) => {
     ReactDOM.unmountComponentAtNode(getHTMLElement(containerRef)!);
   },
+  props: z.object({
+    a: z.string(),
+    b: z.number(),
+    c: z.object({}),
+  }),
 });

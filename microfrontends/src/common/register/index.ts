@@ -1,3 +1,6 @@
+import { z, ZodType } from "zod";
+import { zodToJsonSchema } from "zod-to-json-schema";
+
 import { assert, sleep } from "../utils";
 import {
   MicrofrontendController,
@@ -114,8 +117,6 @@ const getMicrofrontendController = <
     console.warn(
       "Microfrontend cannot be registered without a global window scope"
     );
-    // @ts-ignore
-    return { mount: () => {}, unmount: () => {}, instances: 0 };
   }
   const $window = getWindow();
   $window.$mfs = $window.$mfs || {};
@@ -131,6 +132,7 @@ const getMicrofrontendController = <
       instances: 0,
       scope,
       module,
+      props: {},
     };
     return $scope?.[module]! as MicrofrontendController<TScope, TModule>;
   }
@@ -139,30 +141,30 @@ const getMicrofrontendController = <
 };
 
 /**
- * Returns a function that registers a microfrontend's scope and module in the window, returning a controller
- */
-export const withMountProps =
-  <TMountProps extends {} = {}>() =>
-  <TProps extends TMountProps, TScope extends string, TModule extends string>(
-    scope: TScope,
-    module: TModule,
-    { mount, unmount }: { mount: MountFn<TMountProps>; unmount: UnmountFn }
-  ) =>
-    register<TProps, TScope, TModule>(scope, module, { mount, unmount });
-
-/**
  * Registers a microfrontend's scope and module in the window, returning a controller
  */
 export const register = <
-  TMountProps extends {} = {},
+  TMountPropsSchema extends ZodType<{}>,
+  TMountProps extends TMountPropsSchema extends ZodType<infer Props>
+    ? Props
+    : never,
   TScope extends string = string,
   TModule extends string = string
 >(
   scope: TScope,
   module: TModule,
-  { mount, unmount }: { mount: MountFn<TMountProps>; unmount: UnmountFn }
+  {
+    mount,
+    unmount,
+    props,
+  }: {
+    mount: MountFn<TMountProps>;
+    unmount: UnmountFn;
+    props: TMountPropsSchema;
+  }
 ): Prettify<MicrofrontendController<TScope, TModule, TMountProps>> => {
   const $ctrl = getMicrofrontendController(scope, module);
+  $ctrl.props = jsonSchemaOf(props);
   $ctrl.tracker = $ctrl.tracker || instanceTracker($ctrl);
   const runUnmountFn = (unmount: () => () => void) => {
     $ctrl.tracker?.decrement();
@@ -206,3 +208,8 @@ export const register = <
   };
   return $ctrl;
 };
+
+export const jsonSchemaOf = <TSchema extends {}>(schema: ZodType<TSchema>) =>
+  zodToJsonSchema(schema, "props") as TSchema;
+
+export { z };

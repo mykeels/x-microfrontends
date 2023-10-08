@@ -5,7 +5,7 @@ export type MicrofrontendManifest = {
   events: {
     consumes: string[];
   } & {
-    [key: string]: MicrofrontendEvent;
+    [key: string]: object;
   };
   auth: MicrofrontendAuth;
   slots: {
@@ -13,8 +13,6 @@ export type MicrofrontendManifest = {
   } & {
     [name: string]: MicrofrontendCustomSlot[];
   };
-  createdOn: string;
-  manifestId: string;
 };
 
 export type MicrofrontendRouteOptions = {
@@ -37,12 +35,6 @@ export type MicrofrontendCustomSlotOptions = {
 type MicrofrontendCustomSlot =
   | string
   | (MicrofrontendCustomSlotOptions & { [key: string]: any });
-
-type MicrofrontendEventOptions = {
-  examples: (string | object)[];
-};
-
-type MicrofrontendEvent = MicrofrontendEventOptions & { [key: string]: any };
 
 type MicrofrontendAuthOptions = {
   required?: boolean;
@@ -119,6 +111,7 @@ export type MicrofrontendController<
   instances: number;
   scope: TScope;
   module: TModule;
+  props: object;
   tracker?: {
     increment: () => void;
     decrement: () => void;
