@@ -10,7 +10,8 @@
     "copy:build": "cpx \"build/**/*\" ../chassis/build/mfs/timeline",
     "copy:env": "cpx .env.sample .env",
     "start": "craco start",
-    "test": "craco test"
+    "test": "craco test",
+    "create:manifest": "tsx ./src/manifests.ts > ./public/microfrontend-manifest.json"
   },
   "keywords": [],
   "author": "mykeels",

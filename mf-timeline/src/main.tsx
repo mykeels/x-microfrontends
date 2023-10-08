@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { MicrofrontendContext, register } from "microfrontends";
+import { MicrofrontendContext, register, z } from "microfrontends";
 
 import pkg from "../package.json";
 
@@ -811,4 +811,9 @@ export default register(pkg.name, "./main", {
   unmount: (containerRef) => {
     ReactDOM.unmountComponentAtNode(getHTMLElement(containerRef)!);
   },
+  props: z.object({
+    a: z.string(),
+    b: z.number(),
+    c: z.object({}),
+  }),
 });

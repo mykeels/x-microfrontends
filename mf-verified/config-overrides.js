@@ -2,6 +2,7 @@
 const path = require("path");
 const ModuleFederationPlugin = require("webpack").container
   .ModuleFederationPlugin;
+const HookShellScriptPlugin = require('hook-shell-script-webpack-plugin');
 
 const pkg = require("./package.json");
 const getVersion = (name) => pkg.dependencies[name] || pkg.peerDependencies[name];
@@ -43,6 +44,13 @@ module.exports = function override(config, env) {
         }
       }
     })
+  );
+  const shellScriptPlugin = new HookShellScriptPlugin({
+    beforeCompile: ['npm run create:manifest'],
+  });
+  shellScriptPlugin._onScriptError = () => {};
+  config.plugins.push(
+    shellScriptPlugin
   );
 
   config.resolve = {

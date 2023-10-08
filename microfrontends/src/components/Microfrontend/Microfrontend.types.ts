@@ -5,7 +5,7 @@ export type MicrofrontendManifest = {
   events: {
     consumes: string[];
   } & {
-    [key: string]: MicrofrontendEvent;
+    [key: string]: object;
   };
   auth: MicrofrontendAuth;
   slots: {
@@ -13,8 +13,6 @@ export type MicrofrontendManifest = {
   } & {
     [name: string]: MicrofrontendCustomSlot[];
   };
-  createdOn: string;
-  manifestId: string;
 };
 
 export type MicrofrontendRouteOptions = {
@@ -37,12 +35,6 @@ export type MicrofrontendCustomSlotOptions = {
 type MicrofrontendCustomSlot =
   | string
   | (MicrofrontendCustomSlotOptions & { [key: string]: any });
-
-type MicrofrontendEventOptions = {
-  examples: (string | object)[];
-};
-
-type MicrofrontendEvent = MicrofrontendEventOptions & { [key: string]: any };
 
 type MicrofrontendAuthOptions = {
   required?: boolean;
@@ -95,9 +87,10 @@ export type MicrofrontendWindowRecord<
   };
 };
 
-export type MountFn = (
+type Prettify<T> = { [K in keyof T]: T[K] } & {};
+export type MountFn<TProps extends {} = {}> = (
   containerRef: string | HTMLElement,
-  props: Partial<MicrofrontendMountProps>
+  props: Prettify<TProps & Partial<MicrofrontendMountProps>>
 ) => () => any;
 export type UnmountFn = (containerRef: string | HTMLElement) => any;
 
@@ -108,12 +101,17 @@ export type MicrofrontendDefaultExport = {
   };
 };
 
-export type MicrofrontendController = {
-  mount: MountFn;
+export type MicrofrontendController<
+  TScope extends string = string,
+  TModule extends string = string,
+  TMountProps extends {} = {}
+> = {
+  mount: MountFn<TMountProps>;
   unmount: UnmountFn;
   instances: number;
-  scope: string;
-  module: string;
+  scope: TScope;
+  module: TModule;
+  props: object;
   tracker?: {
     increment: () => void;
     decrement: () => void;

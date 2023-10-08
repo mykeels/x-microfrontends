@@ -35,6 +35,9 @@ importers:
       gh-pages:
         specifier: ^6.0.0
         version: 6.0.0
+      hook-shell-script-webpack-plugin:
+        specifier: ^0.3.0
+        version: 0.3.0
       tsup:
         specifier: ^7.2.0
         version: 7.2.0(typescript@5.2.2)
@@ -169,40 +172,6 @@ importers:
         version: 18.2.7
 
   mf-explore:
-    dependencies:
-      '@craco/craco':
-        specifier: ^7.1.0
-        version: 7.1.0(@types/node@20.5.8)(postcss@8.4.29)(react-scripts@5.0.1)(typescript@5.2.2)
-      eventemitter3:
-        specifier: ^5.0.1
-        version: 5.0.1
-      microfrontends:
-        specifier: '*'
-        version: link:../microfrontends
-      react:
-        specifier: ^18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: ^18.2.0
-        version: 18.2.0(react@18.2.0)
-      react-query:
-        specifier: ^3.39.3
-        version: 3.39.3(react-dom@18.2.0)(react@18.2.0)
-      react-router-dom:
-        specifier: ^6.15.0
-        version: 6.15.0(react-dom@18.2.0)(react@18.2.0)
-      react-scripts:
-        specifier: ^5.0.1
-        version: 5.0.1(@babel/plugin-syntax-flow@7.22.5)(@babel/plugin-transform-react-jsx@7.22.5)(esbuild@0.18.20)(eslint@8.48.0)(react@18.2.0)(typescript@5.2.2)
-      typescript:
-        specifier: ^5.2.2
-        version: 5.2.2
-    devDependencies:
-      '@types/react-dom':
-        specifier: ^18.2.7
-        version: 18.2.7
-
-  mf-layout:
     dependencies:
       '@craco/craco':
         specifier: ^7.1.0
@@ -389,6 +358,12 @@ importers:
       react-query:
         specifier: ^3.39.3
         version: 3.39.3(react-dom@18.2.0)(react@18.2.0)
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
+      zod-to-json-schema:
+        specifier: ^3.21.4
+        version: 3.21.4(zod@3.22.4)
 
 packages:
 
@@ -2429,7 +2404,7 @@ packages:
       chalk: 4.1.2
       collect-v8-coverage: 1.0.2
       exit: 0.1.2
-      glob: 7.1.6
+      glob: 7.2.3
       graceful-fs: 4.2.11
       istanbul-lib-coverage: 3.2.0
       istanbul-lib-instrument: 5.2.1
@@ -6218,7 +6193,7 @@ packages:
       deepmerge: 4.3.1
       eslint: 8.48.0
       fs-extra: 9.1.0
-      glob: 7.1.6
+      glob: 7.2.3
       memfs: 3.5.3
       minimatch: 3.1.2
       schema-utils: 2.7.0
@@ -6441,6 +6416,17 @@ packages:
       once: 1.4.0
       path-is-absolute: 1.0.1
 
+  /glob@7.2.3:
+    resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
+    dependencies:
+      fs.realpath: 1.0.0
+      inflight: 1.0.6
+      inherits: 2.0.4
+      minimatch: 3.1.2
+      once: 1.4.0
+      path-is-absolute: 1.0.1
+    dev: false
+
   /glob@8.1.0:
     resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
     engines: {node: '>=12'}
@@ -6628,6 +6614,10 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
     dev: false
+
+  /hook-shell-script-webpack-plugin@0.3.0:
+    resolution: {integrity: sha512-AMYvSijm53f7Fpyu/BZm+MzrTFT4v1jsYAR4Z5fADHawWiXCOeYXLm4rz0/D+nYsx/tzGn6zkY5b4IEnVqRtqw==}
+    dev: true
 
   /hoopy@0.1.4:
     resolution: {integrity: sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ==}
@@ -7424,7 +7414,7 @@ packages:
       chalk: 4.1.2
       ci-info: 3.8.0
       deepmerge: 4.3.1
-      glob: 7.1.6
+      glob: 7.2.3
       graceful-fs: 4.2.11
       jest-circus: 27.5.1
       jest-environment-jsdom: 27.5.1
@@ -7708,7 +7698,7 @@ packages:
       cjs-module-lexer: 1.2.3
       collect-v8-coverage: 1.0.2
       execa: 5.1.1
-      glob: 7.1.6
+      glob: 7.2.3
       graceful-fs: 4.2.11
       jest-haste-map: 27.5.1
       jest-message-util: 27.5.1
@@ -10331,7 +10321,7 @@ packages:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
     hasBin: true
     dependencies:
-      glob: 7.1.6
+      glob: 7.2.3
     dev: false
 
   /rollup-plugin-terser@7.0.2(rollup@2.79.1):
@@ -11165,7 +11155,7 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       '@istanbuljs/schema': 0.1.3
-      glob: 7.1.6
+      glob: 7.2.3
       minimatch: 3.1.2
     dev: false
 
@@ -12064,7 +12054,7 @@ packages:
       common-tags: 1.8.2
       fast-json-stable-stringify: 2.1.0
       fs-extra: 9.1.0
-      glob: 7.1.6
+      glob: 7.2.3
       lodash: 4.17.21
       pretty-bytes: 5.6.0
       rollup: 2.79.1
@@ -12281,7 +12271,7 @@ packages:
     hasBin: true
     dependencies:
       argparse: 1.0.10
-      glob: 7.1.6
+      glob: 7.2.3
     dev: false
 
   /yargs-parser@20.2.9:
@@ -12328,4 +12318,16 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  /zod-to-json-schema@3.21.4(zod@3.22.4):
+    resolution: {integrity: sha512-fjUZh4nQ1s6HMccgIeE0VP4QG/YRGPmyjO9sAh890aQKPEk3nqbfUXhMFaC+Dr5KvYBm8BCyvfpZf2jY9aGSsw==}
+    peerDependencies:
+      zod: ^3.21.4
+    dependencies:
+      zod: 3.22.4
+    dev: false
+
+  /zod@3.22.4:
+    resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
