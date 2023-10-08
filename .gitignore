@@ -133,3 +133,4 @@ build/
 /tailwind.config.js
 
 *.json.d.ts
+mf-*/public/microfrontend-manifest.json
