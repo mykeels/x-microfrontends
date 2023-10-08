@@ -1,8 +1,11 @@
+import { config } from "dotenv";
 import { MicrofrontendManifest, jsonSchemaOf, z } from "microfrontends";
 
 import Main from "./main.tsx";
 import NavHome from "./nav-home.tsx";
 import NavPost from "./nav-post.tsx";
+
+config();
 
 const manifest = {
   scope: Main.scope,

@@ -35,6 +35,9 @@ importers:
       gh-pages:
         specifier: ^6.0.0
         version: 6.0.0
+      hook-shell-script-webpack-plugin:
+        specifier: ^0.3.0
+        version: 0.3.0
       tsup:
         specifier: ^7.2.0
         version: 7.2.0(typescript@5.2.2)
@@ -6611,6 +6614,10 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
     dev: false
+
+  /hook-shell-script-webpack-plugin@0.3.0:
+    resolution: {integrity: sha512-AMYvSijm53f7Fpyu/BZm+MzrTFT4v1jsYAR4Z5fADHawWiXCOeYXLm4rz0/D+nYsx/tzGn6zkY5b4IEnVqRtqw==}
+    dev: true
 
   /hoopy@0.1.4:
     resolution: {integrity: sha512-HRcs+2mr52W0K+x8RzcLzuPPmVIKMSv97RGHy0Ea9y/mpcaK+xTrjICA04KAHi4GRzxliNqNJEFYWHghy3rSfQ==}
