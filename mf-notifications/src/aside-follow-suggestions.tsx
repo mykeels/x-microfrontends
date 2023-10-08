@@ -1,4 +1,4 @@
-import { register } from "microfrontends";
+import { register, z } from "microfrontends";
 import React from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
@@ -97,4 +97,5 @@ export default register(pkg.name, "./aside-follow-suggestions", {
   unmount: (containerRef) => {
     ReactDOM.unmountComponentAtNode(getHTMLElement(containerRef)!);
   },
+  props: z.object({}),
 });

@@ -2,8 +2,7 @@ import { config } from "dotenv";
 import { MicrofrontendManifest } from "microfrontends";
 
 import Main from "./main.tsx";
-import NavHome from "./nav-home.tsx";
-import NavPost from "./nav-post.tsx";
+import NavMessages from "./nav-messages.tsx";
 
 config();
 
@@ -18,17 +17,10 @@ const manifest = {
     routes: [],
     "nav:item": [
       {
-        name: "Home",
-        module: NavHome.module,
-        props: NavHome.props,
-        priority: 0,
-      },
-    ],
-    "nav:footer": [
-      {
-        name: "Post",
-        module: NavPost.module,
-        props: NavPost.props,
+        name: "Messages",
+        module: NavMessages.module,
+        props: NavMessages.props,
+        priority: 3,
       },
     ],
     "main:content": [
@@ -36,7 +28,7 @@ const manifest = {
         name: "Main",
         module: Main.module,
         props: Main.props,
-        route: "/",
+        route: "/messages/*",
       },
     ],
   },

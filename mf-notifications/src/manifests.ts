@@ -2,8 +2,8 @@ import { config } from "dotenv";
 import { MicrofrontendManifest } from "microfrontends";
 
 import Main from "./main.tsx";
-import NavHome from "./nav-home.tsx";
-import NavPost from "./nav-post.tsx";
+import NavNotifications from "./nav-notifications.tsx";
+import AsideFollowSuggestions from "./aside-follow-suggestions.tsx";
 
 config();
 
@@ -18,17 +18,18 @@ const manifest = {
     routes: [],
     "nav:item": [
       {
-        name: "Home",
-        module: NavHome.module,
-        props: NavHome.props,
-        priority: 0,
+        name: "Notifications",
+        module: NavNotifications.module,
+        props: NavNotifications.props,
+        priority: 2,
       },
     ],
-    "nav:footer": [
+    "aside:item": [
       {
-        name: "Post",
-        module: NavPost.module,
-        props: NavPost.props,
+        name: "Who to follow",
+        module: AsideFollowSuggestions.module,
+        props: AsideFollowSuggestions.props,
+        priority: 3,
       },
     ],
     "main:content": [
@@ -36,7 +37,7 @@ const manifest = {
         name: "Main",
         module: Main.module,
         props: Main.props,
-        route: "/",
+        route: "/notifications/*",
       },
     ],
   },

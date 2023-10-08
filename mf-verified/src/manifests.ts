@@ -2,8 +2,8 @@ import { config } from "dotenv";
 import { MicrofrontendManifest } from "microfrontends";
 
 import Main from "./main.tsx";
-import NavHome from "./nav-home.tsx";
-import NavPost from "./nav-post.tsx";
+import NavVerified from "./nav-verified.tsx";
+import AsideSubscribe from "./aside-subscribe.tsx";
 
 config();
 
@@ -18,17 +18,18 @@ const manifest = {
     routes: [],
     "nav:item": [
       {
-        name: "Home",
-        module: NavHome.module,
-        props: NavHome.props,
-        priority: 0,
+        name: "Verified",
+        module: NavVerified.module,
+        props: NavVerified.props,
+        priority: 5,
       },
     ],
-    "nav:footer": [
+    "aside:item": [
       {
-        name: "Post",
-        module: NavPost.module,
-        props: NavPost.props,
+        name: "Subscribe",
+        module: AsideSubscribe.module,
+        props: AsideSubscribe.props,
+        priority: 1,
       },
     ],
     "main:content": [
@@ -36,7 +37,7 @@ const manifest = {
         name: "Main",
         module: Main.module,
         props: Main.props,
-        route: "/",
+        route: "/verified/*",
       },
     ],
   },

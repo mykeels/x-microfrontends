@@ -1,4 +1,4 @@
-import { MicrofrontendContext, register } from "microfrontends";
+import { MicrofrontendContext, register, z } from "microfrontends";
 import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import { createRoot } from "react-dom/client";
@@ -58,4 +58,5 @@ export default register(pkg.name, "./nav-verified", {
   unmount: (containerRef) => {
     ReactDOM.unmountComponentAtNode(getHTMLElement(containerRef)!);
   },
+  props: z.object({}),
 });
